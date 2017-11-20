@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://aprendiendoarduino.wordpress.com/category/sensores/ -->
+<html lang="es-ES"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width">
+<title>Sensores | Aprendiendo Arduino</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://aprendiendoarduino.wordpress.com/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="https://s0.wp.com/wp-content/themes/pub/twentytwelve/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+<meta name="google-site-verification" content="lcGjQEVwkrdIf9RD5yFXCy49ofpOi8ADIF5_7UJmEas">
+<link rel="dns-prefetch" href="https://s2.wp.com/">
+<link rel="dns-prefetch" href="https://s0.wp.com/">
+<link rel="dns-prefetch" href="https://s1.wp.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.pubmine.com/">
+<link rel="dns-prefetch" href="https://x.bidswitch.net/">
+<link rel="dns-prefetch" href="https://static.criteo.net/">
+<link rel="dns-prefetch" href="https://ib.adnxs.com/">
+<link rel="dns-prefetch" href="https://aax.amazon-adsystem.com/">
+<link rel="dns-prefetch" href="https://bidder.criteo.com/">
+<link rel="dns-prefetch" href="https://cas.criteo.com/">
+<link rel="dns-prefetch" href="https://gum.criteo.com/">
+<link rel="dns-prefetch" href="https://ads.pubmatic.com/">
+<link rel="dns-prefetch" href="https://gads.pubmatic.com/">
+<link rel="dns-prefetch" href="https://tpc.googlesyndication.com/">
+<link rel="dns-prefetch" href="https://ad.doubleclick.net/">
+<link rel="dns-prefetch" href="https://googleads.g.doubleclick.net/">
+<link rel="dns-prefetch" href="https://www.googletagservices.com/">
+<link rel="dns-prefetch" href="https://cdn.switchadhub.com/">
+<link rel="dns-prefetch" href="https://delivery.g.switchadhub.com/">
+<link rel="dns-prefetch" href="https://delivery.swid.switchadhub.com/">
+<link href="https://fonts.gstatic.com/" crossorigin="" rel="preconnect">
+<link rel="alternate" type="application/rss+xml" title="Aprendiendo Arduino » Feed" href="https://aprendiendoarduino.wordpress.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Aprendiendo Arduino » RSS de los comentarios" href="https://aprendiendoarduino.wordpress.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Aprendiendo Arduino » Sensores RSS de la categoría" href="https://aprendiendoarduino.wordpress.com/category/sensores/feed/">
+	<script id="twitter-wjs" src="./Sensores _ Aprendiendo Arduino_files/widgets.js.descarga"></script><script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+			<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s1.wp.com\/wp-includes\/js\/wp-emoji-release.min.js?m=1505864856h&ver=4.9-20171117"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56794,8205,9794,65039],[55358,56794,8203,9794,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Sensores _ Aprendiendo Arduino_files/wp-emoji-release.min.js.descarga" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="all-css-0-1" href="./Sensores _ Aprendiendo Arduino_files/saved_resource" type="text/css" media="all">
+<link rel="stylesheet" id="twentytwelve-fonts-css" href="./Sensores _ Aprendiendo Arduino_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="all-css-2-1" href="./Sensores _ Aprendiendo Arduino_files/style.css" type="text/css" media="all">
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentytwelve-ie-css'  href='https://s0.wp.com/wp-content/themes/pub/twentytwelve/css/ie.css?m=1423935238h&#038;ver=20121010' type='text/css' media='all' />
+<![endif]-->
+<link rel="stylesheet" id="all-css-4-1" href="./Sensores _ Aprendiendo Arduino_files/saved_resource(1)" type="text/css" media="all">
+<script type="text/javascript" src="./Sensores _ Aprendiendo Arduino_files/saved_resource(2)"></script><style type="text/css"></style>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://aprendiendoarduino.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s1.wp.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress.com">
+<link rel="shortcut icon" type="image/x-icon" href="https://secure.gravatar.com/blavatar/bbfc45b79aa1fb3ddff3eb547fd835b3?s=32" sizes="16x16">
+<link rel="icon" type="image/x-icon" href="https://secure.gravatar.com/blavatar/bbfc45b79aa1fb3ddff3eb547fd835b3?s=32" sizes="16x16">
+<link rel="apple-touch-icon-precomposed" href="https://secure.gravatar.com/blavatar/bbfc45b79aa1fb3ddff3eb547fd835b3?s=114">
+<link rel="openid.server" href="https://aprendiendoarduino.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="https://aprendiendoarduino.wordpress.com/">
+<link rel="search" type="application/opensearchdescription+xml" href="https://aprendiendoarduino.wordpress.com/osd.xml" title="Aprendiendo Arduino">
+<link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com">
+		<style type="text/css">
+			.recentcomments a {
+				display: inline !important;
+				padding: 0 !important;
+				margin: 0 !important;
+			}
+
+			table.recentcommentsavatartop img.avatar, table.recentcommentsavatarend img.avatar {
+				border: 0px;
+				margin: 0;
+			}
+
+			table.recentcommentsavatartop a, table.recentcommentsavatarend a {
+				border: 0px !important;
+				background-color: transparent !important;
+			}
+
+			td.recentcommentsavatarend, td.recentcommentsavatartop {
+				padding: 0px 0px 1px 0px;
+				margin: 0px;
+			}
+
+			td.recentcommentstextend {
+				border: none !important;
+				padding: 0px 0px 2px 10px;
+			}
+
+			.rtl td.recentcommentstextend {
+				padding: 0px 10px 2px 0px;
+			}
+
+			td.recentcommentstexttop {
+				border: none;
+				padding: 0px 0px 0px 10px;
+			}
+
+			.rtl td.recentcommentstexttop {
+				padding: 0px 10px 0px 0px;
+			}
+		</style>
+		<meta name="application-name" content="Aprendiendo Arduino"><meta name="msapplication-window" content="width=device-width;height=device-height"><meta name="msapplication-tooltip" content="Aprendiendo a manejar Arduino en profundidad"><meta name="msapplication-task" content="name=Suscribirse;action-uri=https://aprendiendoarduino.wordpress.com/feed/;icon-uri=https://secure.gravatar.com/blavatar/bbfc45b79aa1fb3ddff3eb547fd835b3?s=16"><meta name="msapplication-task" content="name=Registrar un blog gratuito;action-uri=http://wordpress.com/signup/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Ayuda de WordPress.com;action-uri=http://support.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Foros de WordPress.com;action-uri=http://forums.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="title" content="Entradas sobre Sensores en Aprendiendo Arduino">
+<meta name="description" content="Entradas sobre Sensores escritas por jecrespom">
+		<script type="text/javascript">
+		var __ATA_PP = { pt: 3, ht: 0, tn: 'twentytwelve', amp: false };
+		var __ATA = __ATA || {};
+		__ATA.cmd = __ATA.cmd || [];
+		__ATA.criteo = __ATA.criteo || {};
+		__ATA.criteo.cmd = __ATA.criteo.cmd || [];
+		</script>
+		<script type="text/javascript" src="https://s.pubmine.com/head.js" async=""></script><style type="text/css" id="syntaxhighlighteranchor"></style>
+<script type="text/javascript">
+	window.google_analytics_uacct = "UA-52447-2";
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_setDomainName', 'wordpress.com']);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script><script type="text/javascript" async="" src="./Sensores _ Aprendiendo Arduino_files/ga.js.descarga"></script>
+<script src="./Sensores _ Aprendiendo Arduino_files/publishertag.js.descarga"></script><script type="text/javascript" async="" src="./Sensores _ Aprendiendo Arduino_files/saved_resource(3)"></script><link rel="stylesheet" type="text/css" id="gravatar-card-css" href="./Sensores _ Aprendiendo Arduino_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="./Sensores _ Aprendiendo Arduino_files/services.css"><script type="text/javascript" charset="utf-8" async="" src="./Sensores _ Aprendiendo Arduino_files/timeline.9a5a980cfe41511872c0e549f41c7adf.js.descarga"></script><script type="text/javascript" async="" src="./Sensores _ Aprendiendo Arduino_files/link"></script><script type="text/javascript" async="" src="./Sensores _ Aprendiendo Arduino_files/track.php"></script></head>
+
+<body class="archive category category-sensores category-1029386 mp6 customizer-styles-applied custom-font-enabled single-author highlander-enabled highlander-light infinite-scroll">
+<div id="page" class="hfeed site">
+	<header id="masthead" class="site-header" role="banner">
+				<hgroup>
+			<h1 class="site-title"><a href="https://aprendiendoarduino.wordpress.com/" title="Aprendiendo Arduino" rel="home">Aprendiendo Arduino</a></h1>
+			<h2 class="site-description">Aprendiendo a manejar Arduino en profundidad</h2>
+		</hgroup>
+
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<button class="menu-toggle">Menú</button>
+			<a class="assistive-text" href="https://aprendiendoarduino.wordpress.com/category/sensores/#content" title="Saltar al contenido.">Saltar al contenido.</a>
+			<div class="menu-menu-1-container"><ul id="menu-menu-1" class="nav-menu"><li id="menu-item-619" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-619"><a href="https://aprendiendoarduino.wordpress.com/cursos/">Cursos Arduino</a>
+<ul class="sub-menu">
+	<li id="menu-item-2628" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2628"><a href="https://aprendiendoarduino.wordpress.com/cursos/iniciacion-arduino-2017/">Iniciación Arduino 2017</a></li>
+	<li id="menu-item-2331" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2331"><a href="https://aprendiendoarduino.wordpress.com/cursos/curso-arduino-avanzado-2017/">Arduino Avanzado 2017</a></li>
+	<li id="menu-item-1769" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1769"><a href="https://aprendiendoarduino.wordpress.com/cursos/programacion-arduino/">Programación Arduino 2017</a></li>
+	<li id="menu-item-1734" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1734"><a href="https://aprendiendoarduino.wordpress.com/cursos/curso-arduino-2017/">Curso Arduino 2017</a></li>
+	<li id="menu-item-1111" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1111"><a href="https://aprendiendoarduino.wordpress.com/cursos/curso-arduino-avanzado-2016/">Arduino Avanzado 2016</a></li>
+	<li id="menu-item-1110" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1110"><a href="https://aprendiendoarduino.wordpress.com/cursos/curso-arduino-2016-s-e/">Curso Arduino 2016 (S.E.)</a></li>
+	<li id="menu-item-1112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1112"><a href="https://aprendiendoarduino.wordpress.com/cursos/curso-arduino-2016/">Curso Arduino 2016</a></li>
+	<li id="menu-item-620" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-620"><a href="https://aprendiendoarduino.wordpress.com/cursos/arduino-iniciacion-2015/">Curso Iniciación 2015</a></li>
+	<li id="menu-item-1108" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1108"><a href="https://aprendiendoarduino.wordpress.com/cursos/curso-arduino-avanzado/">Curso Avanzado 2014</a></li>
+	<li id="menu-item-1109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1109"><a href="https://aprendiendoarduino.wordpress.com/cursos/curso-arduino-iniciacion/">Curso Iniciación 2014</a></li>
+</ul>
+</li>
+<li id="menu-item-1113" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1113"><a href="https://aprendiendoarduino.wordpress.com/talleres-arduino/">Talleres</a>
+<ul class="sub-menu">
+	<li id="menu-item-1636" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1636"><a href="https://aprendiendoarduino.wordpress.com/talleres-arduino/arduino-day-2017/">Arduino Day 2017 Logroño</a>
+	<ul class="sub-menu">
+		<li id="menu-item-1668" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1668"><a href="https://aprendiendoarduino.wordpress.com/talleres-arduino/arduino-day-2017/iot-conectando-dispositivos-con-arduino/">IoT. Conectando Dispositivos con Arduino</a></li>
+		<li id="menu-item-1674" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1674"><a href="https://aprendiendoarduino.wordpress.com/talleres-arduino/arduino-day-2017/taller-iot-conectando-dispositivos-con-arduino/">Taller IoT. Conectando Dispositivos con Arduino</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1572" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1572"><a href="https://aprendiendoarduino.wordpress.com/talleres-arduino/charla-seminario-m-a/">Charla Seminario UR</a></li>
+	<li id="menu-item-1472" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1472"><a href="https://aprendiendoarduino.wordpress.com/talleres-arduino/ur-maker-2016/">UR-Maker 2016</a></li>
+	<li id="menu-item-1114" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1114"><a href="https://aprendiendoarduino.wordpress.com/talleres-arduino/arduino-day/">Arduino Day 2016 Logroño</a></li>
+</ul>
+</li>
+<li id="menu-item-757" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-757"><a href="https://aprendiendoarduino.wordpress.com/proyectos/">Proyectos</a>
+<ul class="sub-menu">
+	<li id="menu-item-1118" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1118"><a href="https://aprendiendoarduino.wordpress.com/2016/07/06/proyecto-estacion-meteorologica/">Estación meteorológica</a></li>
+	<li id="menu-item-1117" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1117"><a href="https://aprendiendoarduino.wordpress.com/2016/07/06/proyecto-arranque-y-parada-motor-dc/">Arranque-Parada Motor DC</a></li>
+	<li id="menu-item-1116" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1116"><a href="https://aprendiendoarduino.wordpress.com/2016/07/08/proyecto-grabar-datos-de-temperatura-datalogger/">Datalogger Temperatura</a></li>
+	<li id="menu-item-1115" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1115"><a href="https://aprendiendoarduino.wordpress.com/2016/07/08/envio-mensajes-arduino-y-visualizacion-en-tiempo-real/">Mensajes en Tiempo Real</a></li>
+	<li id="menu-item-2255" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2255"><a href="https://aprendiendoarduino.wordpress.com/2017/06/29/proyecto-sistema-de-alarma/">Sistema de Alarma</a></li>
+	<li id="menu-item-2839" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2839"><a href="https://www.instructables.com/id/Halloween-Candy-Counter/">Halloween Candy Counter</a></li>
+</ul>
+</li>
+<li id="menu-item-1047" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1047"><a href="https://aprendiendoarduino.wordpress.com/empresas/">Empresas</a>
+<ul class="sub-menu">
+	<li id="menu-item-1049" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1049"><a href="https://aprendiendoarduino.wordpress.com/empresas/formacion-empresas/">Formación Empresas</a>
+	<ul class="sub-menu">
+		<li id="menu-item-2833" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-2833"><a href="https://aprendiendoarduino.wordpress.com/">Curso Arduino Empresas</a></li>
+		<li id="menu-item-2834" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2834"><a href="http://teinnova.aprendiendoarduino.com/">Curso Teinnova</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1048" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1048"><a href="https://aprendiendoarduino.wordpress.com/empresas/consultoria/">Consultoría</a></li>
+</ul>
+</li>
+<li id="menu-item-1377" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1377"><a href="https://www.aprendiendoarduino.com/servicios/">Servicios IoT</a></li>
+<li id="menu-item-1738" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1738"><a href="https://aprendiendoarduino.wordpress.com/udemy/">Udemy</a></li>
+<li id="menu-item-621" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-621"><a href="https://aprendiendoarduino.wordpress.com/articulos/">Artículos</a></li>
+<li id="menu-item-185" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-185"><a href="https://aprendiendoarduino.wordpress.com/acerca-de/">Acerca de</a></li>
+</ul></div>		</nav><!-- #site-navigation -->
+
+			</header><!-- #masthead -->
+
+	<div id="main" class="wrapper">
+	<section id="primary" class="site-content">
+		<div id="content" role="main">
+
+					<header class="archive-header">
+				<h1 class="archive-title">Archivo de la categoría: <span>Sensores</span></h1>
+
+						</header><!-- .archive-header -->
+
+			
+	<article id="post-1976" class="post-1976 post type-post status-publish format-standard hentry category-arduino category-curso-iniciacion-2017 category-practica category-sensores tag-arduino tag-curso-iniciacion-2017 tag-practica tag-sensor-de-temperatura tag-sensores">
+				<header class="entry-header">
+			
+						<h1 class="entry-title">
+				<a href="https://aprendiendoarduino.wordpress.com/2017/06/24/ejemplo-sensor-de-temperatura/" rel="bookmark">Ejemplo Sensor de&nbsp;Temperatura</a>
+			</h1>
+										<div class="comments-link">
+					<a href="https://aprendiendoarduino.wordpress.com/2017/06/24/ejemplo-sensor-de-temperatura/#comments">3 respuestas</a>				</div><!-- .comments-link -->
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<h3><b>Sensor Temperatura</b></h3>
+<p><span style="font-weight:400;">Leer la sonda de temperatura TMP36 y en función de unas condiciones de temperatura encender 3 LEDS. Encender el primero al alcanzar 22 grados, el segundo a los 24 y el tercero a los 26. También que muestre por pantalla la temperatura leída por el puerto serie en Celsius si lee una C por el puerto serie o en Fahrenheit si lee una F, en cualquier otro caso que muestre el texto: “¿En que formato quieres que muestre la temperatura?”</span></p>
+<p><span style="font-weight:400;">Hacer que se pueda ver por el serial plotter la gráfica de la temperatura, imprimiendo el valor cada 5 segundos con la librería mstimer2.</span></p>
+<p><span style="font-weight:400;">Datasheet sonda: </span><a href="https://www.arduino.cc/en/uploads/Main/TemperatureSensor.pdf"><span style="font-weight:400;">https://www.arduino.cc/en/uploads/Main/TemperatureSensor.pdf</span></a></p>
+<p><span style="font-weight:400;">Esquema conexión (no conectar el módulo bluetooth):</span></p>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/84609-bluetooth1.jpg"></p>
+<p><b>Solución</b><span style="font-weight:400;">: </span><a href="https://github.com/jecrespo/aprendiendoarduino-Curso_Arduino_2017/tree/master/Ejercicio23-Temperatura"><span style="font-weight:400;">https://github.com/jecrespo/aprendiendoarduino-Curso_Arduino_2017/tree/master/Ejercicio23-Temperatura</span></a><span style="font-weight:400;"> &nbsp;</span></p>
+<h3><b>Histeréis</b></h3>
+<p><span style="font-weight:400;">Ver el efecto de parpadeo al no poner histéresis. Añadir una histéresis de 1 grado en cada salto de temperatura para iluminar el led.</span></p>
+<p><span style="font-weight:400;">Histeresis: </span><a href="https://es.wikipedia.org/wiki/Hist%C3%A9resis"><span style="font-weight:400;">https://es.wikipedia.org/wiki/Hist%C3%A9resis</span></a></p>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/Hysteresiscurve.png" width="250" height="220"></p>
+<p>Diagrama de Estados:</p>
+<p><a href="https://aprendiendoarduino.files.wordpress.com/2017/06/ejercicio24-temperatura_histeresis_diagrama_estados.png"><img data-attachment-id="2062" data-permalink="https://aprendiendoarduino.wordpress.com/2017/06/24/ejemplo-sensor-de-temperatura/ejercicio24-temperatura_histeresis_diagrama_estados/" data-orig-file="https://aprendiendoarduino.files.wordpress.com/2017/06/ejercicio24-temperatura_histeresis_diagrama_estados.png?w=625" data-orig-size="622,552" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Ejercicio24-Temperatura_Histeresis_Diagrama_Estados" data-image-description="" data-medium-file="https://aprendiendoarduino.files.wordpress.com/2017/06/ejercicio24-temperatura_histeresis_diagrama_estados.png?w=625?w=300" data-large-file="https://aprendiendoarduino.files.wordpress.com/2017/06/ejercicio24-temperatura_histeresis_diagrama_estados.png?w=625?w=622" class="alignnone size-full wp-image-2062" src="./Sensores _ Aprendiendo Arduino_files/ejercicio24-temperatura_histeresis_diagrama_estados.png" alt="" srcset="https://aprendiendoarduino.files.wordpress.com/2017/06/ejercicio24-temperatura_histeresis_diagrama_estados.png 622w, https://aprendiendoarduino.files.wordpress.com/2017/06/ejercicio24-temperatura_histeresis_diagrama_estados.png?w=150 150w, https://aprendiendoarduino.files.wordpress.com/2017/06/ejercicio24-temperatura_histeresis_diagrama_estados.png?w=300 300w" sizes="(max-width: 622px) 100vw, 622px"></a></p>
+<p><b>Solución</b><span style="font-weight:400;">: </span><a href="https://github.com/jecrespo/aprendiendoarduino-Curso_Arduino_2017/tree/master/Ejercicio24-Temperatura_Histeresis"><span style="font-weight:400;">https://github.com/jecrespo/aprendiendoarduino-Curso_Arduino_2017/tree/master/Ejercicio24-Temperatura_Histeresis</span></a></p>
+		<div class="wpcnt">
+			<div class="wpa wpmrec" style="display: inline-block !important;">
+				<span class="wpa-about">Anuncios</span>
+				<div class="u">		<div id="atatags-26942" style="width:300px;height:250px;float:left;margin-right:2px;">
+			<script type="text/javascript">
+			__ATA.cmd.push(function() {
+				__ATA.initSlot('atatags-26942',  {
+					collapseEmpty: 'before',
+					sectionId: '26942',
+					width: 300,
+					height: 250
+				});
+			});
+			</script>
+		</div>		<div id="atatags-114160" style="width:300px;height:250px;">
+			<script type="text/javascript">
+			__ATA.cmd.push(function() {
+				__ATA.initSlot('atatags-114160',  {
+					collapseEmpty: 'before',
+					sectionId: '114160',
+					width: 300,
+					height: 250
+				});
+			});
+			</script>
+		</div></div>
+						<div id="crt-2070090480" style="width: 300px; height: 250px; display: block !important;"><iframe src="./Sensores _ Aprendiendo Arduino_files/afr.html" id="crt-2070090480_cto_iframe" frameborder="0" marginwidth="0px" marginheight="0px" width="100%" height="100%" scrolling="no"></iframe></div>
+		<script type="text/javascript">
+(function(){var c=function(){var a=document.getElementById("crt-2070090480");window.Criteo?(a.parentNode.style.setProperty("display","inline-block","important"),a.style.setProperty("display","block","important"),window.Criteo.DisplayAcceptableAdIfAdblocked({zoneid:388248,containerid:"crt-2070090480",collapseContainerIfNotAdblocked:!0,callifnotadblocked:function(){a.style.setProperty("display","none","important");a.style.setProperty("visbility","hidden","important")}})):(a.style.setProperty("display","none","important"),a.style.setProperty("visibility","hidden","important"))};if(window.Criteo)c();else{if(!__ATA.criteo.script){var b=document.createElement("script");b.src="//static.criteo.net/js/ld/publishertag.js";b.onload=function(){for(var a=0;a<__ATA.criteo.cmd.length;a++){var b=__ATA.criteo.cmd[a];"function"===typeof b&&b()}};(document.head||document.getElementsByTagName("head")[0]).appendChild(b);__ATA.criteo.script=b}__ATA.criteo.cmd.push(c)}})();
+		</script>		<div id="crt-1137173817" style="width: 300px; height: 250px; display: block !important;"><iframe src="./Sensores _ Aprendiendo Arduino_files/afr(1).html" id="crt-1137173817_cto_iframe" frameborder="0" marginwidth="0px" marginheight="0px" width="100%" height="100%" scrolling="no"></iframe></div>
+		<script type="text/javascript">
+(function(){var c=function(){var a=document.getElementById("crt-1137173817");window.Criteo?(a.parentNode.style.setProperty("display","inline-block","important"),a.style.setProperty("display","block","important"),window.Criteo.DisplayAcceptableAdIfAdblocked({zoneid:837497,containerid:"crt-1137173817",collapseContainerIfNotAdblocked:!0,callifnotadblocked:function(){a.style.setProperty("display","none","important");a.style.setProperty("visbility","hidden","important")}})):(a.style.setProperty("display","none","important"),a.style.setProperty("visibility","hidden","important"))};if(window.Criteo)c();else{if(!__ATA.criteo.script){var b=document.createElement("script");b.src="//static.criteo.net/js/ld/publishertag.js";b.onload=function(){for(var a=0;a<__ATA.criteo.cmd.length;a++){var b=__ATA.criteo.cmd[a];"function"===typeof b&&b()}};(document.head||document.getElementsByTagName("head")[0]).appendChild(b);__ATA.criteo.script=b}__ATA.criteo.cmd.push(c)}})();
+		</script>
+			</div>
+		</div>					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			Esta entrada se publicó en <a href="https://aprendiendoarduino.wordpress.com/category/arduino/" rel="category tag">Arduino</a>, <a href="https://aprendiendoarduino.wordpress.com/category/curso-iniciacion-2017/" rel="category tag">Curso Iniciación 2017</a>, <a href="https://aprendiendoarduino.wordpress.com/category/practica/" rel="category tag">Práctica</a>, <a href="https://aprendiendoarduino.wordpress.com/category/sensores/" rel="category tag">Sensores</a> y está etiquetada con <a href="https://aprendiendoarduino.wordpress.com/tag/arduino/" rel="tag">Arduino</a>, <a href="https://aprendiendoarduino.wordpress.com/tag/curso-iniciacion-2017/" rel="tag">Curso Iniciación 2017</a>, <a href="https://aprendiendoarduino.wordpress.com/tag/practica/" rel="tag">Práctica</a>, <a href="https://aprendiendoarduino.wordpress.com/tag/sensor-de-temperatura/" rel="tag">Sensor de Temperatura</a>, <a href="https://aprendiendoarduino.wordpress.com/tag/sensores/" rel="tag">Sensores</a> en <a href="https://aprendiendoarduino.wordpress.com/2017/06/24/ejemplo-sensor-de-temperatura/" title="11:09 am" rel="bookmark"><time class="entry-date" datetime="2017-06-24T11:09:31+00:00">24 junio, 2017</time></a><span class="by-author"> por <span class="author vcard"><a class="url fn n" href="https://aprendiendoarduino.wordpress.com/author/jecrespom/" title="Ver todas las entradas de jecrespom" rel="author">jecrespom</a></span></span>.								</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+
+	<article id="post-1963" class="post-1963 post type-post status-publish format-standard hentry category-arduino category-bus-de-campo category-curso-iniciacion-2017 category-sensores tag-arduino tag-bus-de-campo tag-curso-iniciacion-2017 tag-dht tag-sensores">
+				<header class="entry-header">
+			
+						<h1 class="entry-title">
+				<a href="https://aprendiendoarduino.wordpress.com/2017/06/24/sensores-arduino-2/" rel="bookmark">Sensores Arduino</a>
+			</h1>
+										<div class="comments-link">
+					<a href="https://aprendiendoarduino.wordpress.com/2017/06/24/sensores-arduino-2/#comments">2 respuestas</a>				</div><!-- .comments-link -->
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p><span style="font-weight:400;">Un sensor es un dispositivo capaz de detectar magnitudes físicas o químicas, llamadas variables de instrumentación, y transformarlas en variables eléctricas.</span></p>
+<ul>
+<li style="font-weight:400;"><span style="font-weight:400;">Las variables de instrumentación pueden ser por ejemplo: temperatura, intensidad lumínica, distancia, aceleración, inclinación, desplazamiento, presión, fuerza, torsión, humedad, movimiento, pH, etc.</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Una magnitud eléctrica puede ser una resistencia eléctrica (como en una RTD), una capacidad eléctrica (como en un sensor de humedad o un sensor capacitivo), una tensión eléctrica (como en un termopar), una corriente eléctrica (como en un fototransistor), etc.</span></li>
+</ul>
+<p><span style="font-weight:400;">Los sensores se pueden clasificar en función de los datos de salida en:</span></p>
+<ul>
+<li style="font-weight:400;"><span style="font-weight:400;">Digitales</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Analógicos</span></li>
+</ul>
+<p><span style="font-weight:400;">Dependiendo del tipo de sensor, deberemos conectarlo a una entrada digital o analógica.</span></p>
+<p><span style="font-weight:400;">Y dentro de los sensores digitales, estos nos pueden dar una señal digital simple con dos estados como una salida de contacto libre de tensión o una salida en bus digital. En caso que el sensor use comunicación por bus, deberemos usar algunos de los buses que implementa Arduino o usar hardware adicional que nos proporcione un interfaz entre el Arduino y el bus.</span></p>
+<p><span style="font-weight:400;">Un ejemplo de sensor analógico sería el ACS714, es un sensor de efecto hall que mide las corrientes eléctricas que pasan a través del chip y devuelve un valor en voltaje proporcional a la corriente que circula por el sensor:</span></p>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/EPLL002-ACS714-Current-Sensor-Carrier-30A.jpg" width="390" height="318"></p>
+<p><span style="font-weight:400;">Datasheet: </span><a href="http://www.allegromicro.com/~/Media/Files/Datasheets/ACS714-Datasheet.ashx"><span style="font-weight:400;">http://www.allegromicro.com/~/Media/Files/Datasheets/ACS714-Datasheet.ashx</span></a></p>
+<p><span style="font-weight:400;">Como medir corriente con Arduino y un sensor ACS714: </span><a href="http://playground.arduino.cc/Main/CurrentSensing"><span style="font-weight:400;">http://playground.arduino.cc/Main/CurrentSensing</span></a></p>
+<p><span style="font-weight:400;">Tutorial de uso del sensor ACS714: </span><a href="http://www.instructables.com/id/How-to-Measure-AC-Current-using-Hall-Effect-Sensor/?ALLSTEPS"><span style="font-weight:400;">http://www.instructables.com/id/How-to-Measure-AC-Current-using-Hall-Effect-Sensor/?ALLSTEPS</span></a></p>
+<h3><b>Características de &nbsp;los sensores</b></h3>
+<ul>
+<li style="font-weight:400;"><b>Rango de medida</b><span style="font-weight:400;">: dominio en la magnitud medida en el que puede aplicarse el sensor.</span></li>
+<li style="font-weight:400;"><b>Precisión</b><span style="font-weight:400;">: es el error de medida máximo esperado.</span></li>
+<li style="font-weight:400;"><b>Offset o desviación de cero</b><span style="font-weight:400;">: valor de la variable de salida cuando la variable de entrada es nula. Si el rango de medida no llega a valores nulos de la variable de entrada, habitualmente se establece otro punto de referencia para definir el offset.</span></li>
+<li style="font-weight:400;"><b>Linealidad o correlación lineal</b><span style="font-weight:400;">.</span></li>
+<li style="font-weight:400;"><b>Sensibilidad</b><span style="font-weight:400;"> de un sensor: suponiendo que es de entrada a salida y la variación de la magnitud de entrada.</span></li>
+<li style="font-weight:400;"><b>Resolución</b><span style="font-weight:400;">: mínima variación de la magnitud de entrada que puede detectarse a la salida.</span></li>
+<li style="font-weight:400;"><b>Rapidez de respuesta</b><span style="font-weight:400;">: puede ser un tiempo fijo o depender de cuánto varíe la magnitud a medir. Depende de la capacidad del sistema para seguir las variaciones de la magnitud de entrada.</span></li>
+<li style="font-weight:400;"><b>Derivas</b><span style="font-weight:400;">: son otras magnitudes, aparte de la medida como magnitud de entrada, que influyen en la variable de salida. Por ejemplo, pueden ser condiciones ambientales, como la humedad, la temperatura u otras como el envejecimiento (oxidación, desgaste, etc.) del sensor.</span></li>
+<li style="font-weight:400;"><b>Repetitividad</b><span style="font-weight:400;">: error esperado al repetir varias veces la misma medida.</span></li>
+</ul>
+<p><span style="font-weight:400;">Más información: </span><a href="http://es.wikipedia.org/wiki/Sensor#Caracter.C3.ADsticas_de_un_sensor"><span style="font-weight:400;">http://es.wikipedia.org/wiki/Sensor#Caracter.C3.ADsticas_de_un_sensor</span></a></p>
+<p><span style="font-weight:400;">Tipos de sensores: </span><a href="http://es.wikipedia.org/wiki/Sensor#Tipos_de_sensores"><span style="font-weight:400;">http://es.wikipedia.org/wiki/Sensor#Tipos_de_sensores</span></a></p>
+<p><b>IMPORTANTE</b><span style="font-weight:400;">: A la hora de elegir un sensor, debemos leer detenidamente las características y elegir uno que sea compatible con nuestro sistema (intensidad y voltaje) y que sea sencillo de usar o nos faciliten una librería sencilla y potente.</span></p>
+<p><span style="font-weight:400;">Catálogo de sensores:</span></p>
+<ul>
+<li style="font-weight:400;"><a href="http://tienda.bricogeek.com/23-sensores"><span style="font-weight:400;">http://tienda.bricogeek.com/23-sensores</span></a></li>
+<li style="font-weight:400;"><a href="http://www.trossenrobotics.com/c/arduino-sensors.aspx"><span style="font-weight:400;">http://www.trossenrobotics.com/c/arduino-sensors.aspx</span></a></li>
+<li style="font-weight:400;"><a href="https://www.seeedstudio.com/s/sensors.html"><span style="font-weight:400;">https://www.seeedstudio.com/s/sensors.html</span></a></li>
+<li style="font-weight:400;"><a href="https://www.sparkfun.com/categories/23"><span style="font-weight:400;">https://www.sparkfun.com/categories/23</span></a></li>
+<li style="font-weight:400;"><a href="http://www.phidgets.com/"><span style="font-weight:400;">http://www.phidgets.com/</span></a></li>
+<li style="font-weight:400;"><a href="http://www.electronicaestudio.com/sensores.htm"><span style="font-weight:400;">http://www.electronicaestudio.com/sensores.htm</span></a></li>
+</ul>
+<h3><b>Sensores con comunicación por bus.</b></h3>
+<p><span style="font-weight:400;">Un bus (o canal) es un sistema digital que transfiere datos entre los componentes de una dispositivo electrónico o entre varios. Está formado por cables o pistas en un circuito impreso, dispositivos como resistencias y condensadores además de circuitos integrados.</span></p>
+<p><span style="font-weight:400;">La tendencia en los últimos años hacia el uso de buses seriales como el USB, Firewire, etc… para comunicaciones con periféricos, reemplazando los buses paralelos, a pesar de que el bus serial posee una lógica compleja (requiriendo mayor poder de cómputo que el bus paralelo) se produce a cambio de velocidades y eficacias mayores.</span></p>
+<p><span style="font-weight:400;">Arduino dispone de buses serie I2C y SPI para comunicarse con dispositivos sin necesidad de HW adicional</span></p>
+<p><span style="font-weight:400;">Bus RS485:</span></p>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/7f947-5.png" width="417" height="154"></p>
+<p><span style="font-weight:400;">Más información en: </span><a href="http://es.wikipedia.org/wiki/Bus_(inform%C3%A1tica)"><span style="font-weight:400;">http://es.wikipedia.org/wiki/Bus_(inform%C3%A1tica)</span></a></p>
+<p><span style="font-weight:400;">Existen muchos tipos de buses de comunicaciones, algunos de ellos los implementa arduino mediante controladores HW integrados en la MCU (I2C) o mediante una librería como one wire. En otros casos es necesario un hardware adicional para adaptar la señal con un transceiver y manejar el protocolo con un controlador, por ejemplo can bus o modbus.</span></p>
+<h4><b>Sondas DHT11 y DHT22</b></h4>
+<p><span style="font-weight:400;">Los sensores DHT11 o DHT22 que son ampliamente usados con Arduino, son unos pequeños dispositivos que nos permiten medir la temperatura y la humedad. A pesar que estas medidas son analógicas, estos sensores los tendremos que conectar a pines digitales, ya que la señal de salida es digital a un bus punto a punto. Llevan un pequeño microcontrolador interno para hacer el tratamiento de señal. Estos sensores han sido calibrados en laboratorios, presentan una gran fiabilidad.</span></p>
+<p><span style="font-weight:400;">Estos sensores funcionan con ciclos de operación de duración determinada. En determinados casos de aplicaciones los tiempos de lectura de los sensores puede ser determinante a la hora de elegirlo.</span></p>
+<table>
+<tbody>
+<tr>
+<td><span style="font-weight:400;">Parámetro</span></td>
+<td><span style="font-weight:400;">DHT11</span></td>
+<td><span style="font-weight:400;">DHT22</span></td>
+</tr>
+<tr>
+<td><span style="font-weight:400;">Alimentación</span></td>
+<td><span style="font-weight:400;">3Vdc ≤ Vcc ≤ 5Vdc</span></td>
+<td><span style="font-weight:400;">3.3Vdc ≤ Vcc ≤ 6Vdc</span></td>
+</tr>
+<tr>
+<td><span style="font-weight:400;">Señal de Salida</span></td>
+<td><span style="font-weight:400;">Digital</span></td>
+<td><span style="font-weight:400;">Digital</span></td>
+</tr>
+<tr>
+<td><span style="font-weight:400;">Rango de medida Temperatura</span></td>
+<td><span style="font-weight:400;">De 0 a 50 °C</span></td>
+<td><span style="font-weight:400;">De -40°C a 80 °C</span></td>
+</tr>
+<tr>
+<td><span style="font-weight:400;">Precisión Temperatura</span></td>
+<td><span style="font-weight:400;">±2 °C</span></td>
+<td><span style="font-weight:400;">&lt;±0.5 °C</span></td>
+</tr>
+<tr>
+<td><span style="font-weight:400;">Resolución Temperatura</span></td>
+<td><span style="font-weight:400;">0.1°C</span></td>
+<td><span style="font-weight:400;">0.1°C</span></td>
+</tr>
+<tr>
+<td><span style="font-weight:400;">Rango de medida Humedad</span></td>
+<td><span style="font-weight:400;">De 20% a 90% RH</span></td>
+<td><span style="font-weight:400;">De 0 a 100% RH</span></td>
+</tr>
+<tr>
+<td><span style="font-weight:400;">Precisión Humedad</span></td>
+<td><span style="font-weight:400;">4% RH</span></td>
+<td><span style="font-weight:400;">2% RH</span></td>
+</tr>
+<tr>
+<td><span style="font-weight:400;">Resolución Humedad</span></td>
+<td><span style="font-weight:400;">1%RH</span></td>
+<td><span style="font-weight:400;">0.1%RH</span></td>
+</tr>
+<tr>
+<td><span style="font-weight:400;">Tiempo de sensado</span></td>
+<td><span style="font-weight:400;">1s</span></td>
+<td><span style="font-weight:400;">2s</span></td>
+</tr>
+<tr>
+<td><span style="font-weight:400;">Tamaño</span></td>
+<td><span style="font-weight:400;">12 x 15.5 x 5.5mm</span></td>
+<td><span style="font-weight:400;">14 x 18 x 5.5mm</span></td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-weight:400;">Más información sobre la sonda DHT22:&nbsp;</span><a href="http://www.seeedstudio.com/wiki/Grove_-_Temperature_and_Humidity_Sensor_Pro"><span style="font-weight:400;">http://www.seeedstudio.com/wiki/Grove_-_Temperature_and_Humidity_Sensor_Pro</span></a></p>
+<p><span style="font-weight:400;">Datasheet de sondas DHT22:</span></p>
+<ul>
+<li style="font-weight:400;"><a href="https://www.sparkfun.com/datasheets/Sensors/Temperature/DHT22.pdf"><span style="font-weight:400;">https://www.sparkfun.com/datasheets/Sensors/Temperature/DHT22.pdf</span></a></li>
+<li style="font-weight:400;"><a href="http://www.adafruit.com/datasheets/Digital%20humidity%20and%20temperature%20sensor%20AM2302.pdf"><span style="font-weight:400;">http://www.adafruit.com/datasheets/Digital%20humidity%20and%20temperature%20sensor%20AM2302.pdf</span></a></li>
+</ul>
+<p><span style="font-weight:400;">Este esquema explica como funciona este sensor y el protocolo de comunicación. La librería implementa el protocolo y facilita el uso de la sonda con Arduino.</span></p>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/2alxdr.png" width="700" height="482"></p>
+<p><span style="font-weight:400;">Vemos como para un mismo sensor tenemos diferentes librerías con funciones y uso diferente en cada una de ellas. Cada uno de los distribuidores de estas sondas ha creado su propia librería.</span></p>
+<ul>
+<li style="font-weight:400;"><a href="https://github.com/Seeed-Studio/Grove_Temper_Humidity_TH02"><span style="font-weight:400;">https://github.com/Seeed-Studio/Grove_Temper_Humidity_TH02</span></a></li>
+<li style="font-weight:400;"><a href="https://github.com/sparkfun/RHT03"><span style="font-weight:400;">https://github.com/sparkfun/RHT03</span></a></li>
+<li style="font-weight:400;"><a href="https://github.com/adafruit/DHT-sensor-library"><span style="font-weight:400;">https://github.com/adafruit/DHT-sensor-library</span></a></li>
+<li style="font-weight:400;"><a href="http://playground.arduino.cc/Main/DHT11Lib"><span style="font-weight:400;">http://playground.arduino.cc/Main/DHT11Lib</span></a><span style="font-weight:400;"> incluye calculo punto de rocio</span></li>
+</ul>
+<h4><b>Sonda DHT18B20</b></h4>
+<p><span style="font-weight:400;">Otra sonda de temperatura muy usada con Arduino es la DS18B20, esta usa un bus de comunicación multipunto llamado one wire, lo que nos permite leer muchas sondas con una sola i/o digital.</span></p>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/544c7-ds18b20-digital-temperature-sensor.jpg"></p>
+<p><span style="font-weight:400;">Sonda: </span><a href="http://www.seeedstudio.com/depot/One-Wire-Temperature-Sensor-p-1235.html"><span style="font-weight:400;">http://www.seeedstudio.com/depot/One-Wire-Temperature-Sensor-p-1235.html</span></a></p>
+<p><span style="font-weight:400;">Datasheet sensor: </span><a href="http://datasheets.maximintegrated.com/en/ds/DS18B20.pdf"><span style="font-weight:400;">http://datasheets.maximintegrated.com/en/ds/DS18B20.pdf</span></a></p>
+<p><span style="font-weight:400;">Librería: </span><a href="http://playground.arduino.cc/Learning/OneWire"><span style="font-weight:400;">http://playground.arduino.cc/Learning/OneWire</span></a></p>
+<p><span style="font-weight:400;">Última version de la librería: </span><a href="http://www.pjrc.com/teensy/td_libs_OneWire.html"><span style="font-weight:400;">http://www.pjrc.com/teensy/td_libs_OneWire.html</span></a></p>
+<p><span style="font-weight:400;">Protocolo one-wire:</span></p>
+<ul>
+<li style="font-weight:400;"><a href="http://en.wikipedia.org/wiki/1-Wire"><span style="font-weight:400;">http://en.wikipedia.org/wiki/1-Wire</span></a></li>
+<li style="font-weight:400;"><a href="http://www.maximintegrated.com/en/app-notes/index.mvp/id/148"><span style="font-weight:400;">http://www.maximintegrated.com/en/app-notes/index.mvp/id/148</span></a></li>
+</ul>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/DS18B20.png" width="500" height="250"></p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			Esta entrada se publicó en <a href="https://aprendiendoarduino.wordpress.com/category/arduino/" rel="category tag">Arduino</a>, <a href="https://aprendiendoarduino.wordpress.com/category/bus-de-campo/" rel="category tag">Bus de Campo</a>, <a href="https://aprendiendoarduino.wordpress.com/category/curso-iniciacion-2017/" rel="category tag">Curso Iniciación 2017</a>, <a href="https://aprendiendoarduino.wordpress.com/category/sensores/" rel="category tag">Sensores</a> y está etiquetada con <a href="https://aprendiendoarduino.wordpress.com/tag/arduino/" rel="tag">Arduino</a>, <a href="https://aprendiendoarduino.wordpress.com/tag/bus-de-campo/" rel="tag">Bus de Campo</a>, <a href="https://aprendiendoarduino.wordpress.com/tag/curso-iniciacion-2017/" rel="tag">Curso Iniciación 2017</a>, <a href="https://aprendiendoarduino.wordpress.com/tag/dht/" rel="tag">DHT</a>, <a href="https://aprendiendoarduino.wordpress.com/tag/sensores/" rel="tag">Sensores</a> en <a href="https://aprendiendoarduino.wordpress.com/2017/06/24/sensores-arduino-2/" title="10:54 am" rel="bookmark"><time class="entry-date" datetime="2017-06-24T10:54:02+00:00">24 junio, 2017</time></a><span class="by-author"> por <span class="author vcard"><a class="url fn n" href="https://aprendiendoarduino.wordpress.com/author/jecrespom/" title="Ver todas las entradas de jecrespom" rel="author">jecrespom</a></span></span>.								</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+
+	<article id="post-1686" class="post-1686 post type-post status-publish format-standard hentry category-actuadores category-arduino category-esp8266 category-hardware category-microcontrolador category-sensores tag-actuadores tag-arduino tag-esp8266 tag-hardware tag-microcontroladores tag-sensores">
+				<header class="entry-header">
+			
+						<h1 class="entry-title">
+				<a href="https://aprendiendoarduino.wordpress.com/2017/03/31/hw-iot/" rel="bookmark">HW IoT</a>
+			</h1>
+										<div class="comments-link">
+					<a href="https://aprendiendoarduino.wordpress.com/2017/03/31/hw-iot/#comments">1 respuesta</a>				</div><!-- .comments-link -->
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Esta conferencia sobre IoT con Arduino fue expuesta el 1 de abril de 2017 con motivo del Arduino Day. Puedes ver el video de la conferencia completa en&nbsp;<a href="http://www.innovarioja.tv/index.php/video/ver/1661" target="_blank" rel="noopener noreferrer">http://www.innovarioja.tv/index.php/video/ver/1661</a></p>
+<hr>
+<p><b>Dispositivos Hardware</b><span style="font-weight:400;">, son los dispositivos que van a medir y los que van a interactuar con el exterior.</span></p>
+<p><span style="font-weight:400;">El primer elemento, el que está más cerca de las “cosas” es el HW que se encarga de medir e interactuar con las “cosas” y procesar esos datos:</span></p>
+<ul>
+<li style="font-weight:400;"><b>Sensores</b><span style="font-weight:400;">: Los sensores son el primer eslabón de la cadena de IoT </span><a href="https://aprendiendoarduino.wordpress.com/2016/07/02/sensores-arduino/"><span style="font-weight:400;">https://aprendiendoarduino.wordpress.com/2016/07/02/sensores-arduino/</span></a></li>
+</ul>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/iotmap_harbor1.png"></p>
+<ul>
+<li style="font-weight:400;"><b>Actuadores</b><span style="font-weight:400;">: </span><a href="https://aprendiendoarduino.wordpress.com/2016/07/02/actuadores-y-perifericos-de-salida-2/"><span style="font-weight:400;">https://aprendiendoarduino.wordpress.com/2016/07/02/actuadores-y-perifericos-de-salida-2/</span></a></li>
+<li style="font-weight:400;"><b>Periféricos</b><span style="font-weight:400;">: </span><a href="https://aprendiendoarduino.wordpress.com/2016/07/02/actuadores-y-perifericos-de-salida-2/"><span style="font-weight:400;">https://aprendiendoarduino.wordpress.com/2016/07/02/actuadores-y-perifericos-de-salida-2/</span></a></li>
+</ul>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/kit-de-sensores-compatible-arduino.jpg" width="530" height="530"></p>
+<p><span style="font-weight:400;">El </span><b>elemento HW programable</b><span style="font-weight:400;"> capaz de interactuar con estos dispositivos es el microcontrolador o el microprocesador.</span></p>
+<p><span style="font-weight:400;">El HW libre por excelencia es </span><b>Arduino </b><span style="font-weight:400;">como microcontrolador y </span><b>Raspberry Pi</b><span style="font-weight:400;"> como microprocesador, con menor potencia física pero mayor potencia de cálculo.</span></p>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/1366_2000.png" width="1094" height="1128"></p>
+<p><span style="font-weight:400;">Dentro del HW libre no solo debemos quedarnos con Arduino, sino que existen otros dispositivos compatibles que se programar igual que Arduino:</span></p>
+<ul>
+<li style="list-style-type:none;">
+<ul>
+<li style="font-weight:400;"><span style="font-weight:400;">Arduino: </span><a href="https://www.arduino.cc/"><span style="font-weight:400;">https://www.arduino.cc/</span></a></li>
+<li style="font-weight:400;"><b><span style="font-weight:400;">ESP8266, HW low cost con wifi: </span><a href="https://espressif.com/en/products/hardware/esp8266ex/overview"><span style="font-weight:400;">https://espressif.com/en/products/hardware/esp8266ex/overview</span></a></b></li>
+</ul>
+</li>
+</ul>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/ESP8266_Wi-Fi_Module.jpg" width="430" height="424"></p>
+<ul>
+<li style="list-style-type:none;">
+<ul>
+<li style="font-weight:400;"><span style="font-weight:400;">ESP32, el sucesor del ESP8266: </span><a href="https://espressif.com/en/products/hardware/esp32/overview"><span style="font-weight:400;">https://espressif.com/en/products/hardware/esp32/overview</span></a></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Moteino: </span><a href="https://lowpowerlab.com/guide/moteino/"><span style="font-weight:400;">https://lowpowerlab.com/guide/moteino/</span></a></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Artik de Samsung </span><a href="https://www.artik.io/"><span style="font-weight:400;">https://www.artik.io/</span></a></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Particle: </span><a href="https://www.particle.io/"><span style="font-weight:400;">https://www.particle.io/</span></a><span style="font-weight:400;">, productos: </span><a href="https://store.particle.io/"><span style="font-weight:400;">https://store.particle.io/</span></a></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Waspmote de Libellium: </span><a href="http://www.libelium.com/products/waspmote/"><span style="font-weight:400;">http://www.libelium.com/products/waspmote/</span></a></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Onion </span><a href="https://onion.io/"><span style="font-weight:400;">https://onion.io/</span></a><span style="font-weight:400;"> y </span><a href="https://onion.io/omega"><span style="font-weight:400;">https://onion.io/omega</span></a></li>
+<li style="font-weight:400;"><span style="font-weight:400;">La MCU con conexión inalámbrica sub 1 GHz de TI: </span><a href="http://www.ti.com/product/cc1310"><span style="font-weight:400;">http://www.ti.com/product/cc1310</span></a></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Riotboard: </span><a href="http://riotboard.org/"><span style="font-weight:400;">http://riotboard.org/</span></a></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Geothings: </span><a href="http://geothings.io/"><span style="font-weight:400;">http://geothings.io/</span></a></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Sensor ambiental: </span><a href="http://www.iotsens.com/sensors_en/environmental-sensor/"><span style="font-weight:400;">http://www.iotsens.com/sensors_en/environmental-sensor/</span></a></li>
+<li style="font-weight:400;"><span style="font-weight:400;">ARM Mbed: </span><a href="https://developer.mbed.org/platforms/"><span style="font-weight:400;">https://developer.mbed.org/platforms/</span></a></li>
+</ul>
+</li>
+</ul>
+<p><span style="font-weight:400;">Y muchas más que aparecen cada día.</span></p>
+<p><span style="font-weight:400;">No solo para prototipos, PLC basado en Arduino: </span><a href="https://www.industrialshields.com/"><span style="font-weight:400;">https://www.industrialshields.com/</span></a></p>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/PLC-ARDUINO-M-DUINO-57-RELAY-1.jpg" width="1296" height="1296"></p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			Esta entrada se publicó en <a href="https://aprendiendoarduino.wordpress.com/category/actuadores/" rel="category tag">Actuadores</a>, <a href="https://aprendiendoarduino.wordpress.com/category/arduino/" rel="category tag">Arduino</a>, <a href="https://aprendiendoarduino.wordpress.com/category/esp8266/" rel="category tag">ESP8266</a>, <a href="https://aprendiendoarduino.wordpress.com/category/hardware/" rel="category tag">Hardware</a>, <a href="https://aprendiendoarduino.wordpress.com/category/microcontrolador/" rel="category tag">Microcontrolador</a>, <a href="https://aprendiendoarduino.wordpress.com/category/sensores/" rel="category tag">Sensores</a> y está etiquetada con <a href="https://aprendiendoarduino.wordpress.com/tag/actuadores/" rel="tag">Actuadores</a>, <a href="https://aprendiendoarduino.wordpress.com/tag/arduino/" rel="tag">Arduino</a>, <a href="https://aprendiendoarduino.wordpress.com/tag/esp8266/" rel="tag">ESP8266</a>, <a href="https://aprendiendoarduino.wordpress.com/tag/hardware/" rel="tag">Hardware</a>, <a href="https://aprendiendoarduino.wordpress.com/tag/microcontroladores/" rel="tag">Microcontroladores</a>, <a href="https://aprendiendoarduino.wordpress.com/tag/sensores/" rel="tag">Sensores</a> en <a href="https://aprendiendoarduino.wordpress.com/2017/03/31/hw-iot/" title="3:54 pm" rel="bookmark"><time class="entry-date" datetime="2017-03-31T15:54:33+00:00">31 marzo, 2017</time></a><span class="by-author"> por <span class="author vcard"><a class="url fn n" href="https://aprendiendoarduino.wordpress.com/author/jecrespom/" title="Ver todas las entradas de jecrespom" rel="author">jecrespom</a></span></span>.								</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+
+	<article id="post-1679" class="post-1679 post type-post status-publish format-standard hentry category-comunicacion category-iot category-sensores tag-api-rest tag-comunicaciones tag-iot tag-mqtt tag-plataformas tag-protocolos tag-sensores">
+				<header class="entry-header">
+			
+						<h1 class="entry-title">
+				<a href="https://aprendiendoarduino.wordpress.com/2017/03/29/que-es-iot/" rel="bookmark">Qué es IoT</a>
+			</h1>
+										<div class="comments-link">
+					<a href="https://aprendiendoarduino.wordpress.com/2017/03/29/que-es-iot/#comments">2 respuestas</a>				</div><!-- .comments-link -->
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Esta conferencia sobre IoT con Arduino fue expuesta el 1 de abril de 2017 con motivo del Arduino Day. Puedes ver el video de la conferencia completa en&nbsp;<a href="http://www.innovarioja.tv/index.php/video/ver/1661" target="_blank" rel="noopener noreferrer">http://www.innovarioja.tv/index.php/video/ver/1661</a></p>
+<hr>
+<p><b>Internet de las cosas</b><span style="font-weight:400;"> (en inglés Internet of things, abreviado IoT) es un concepto que se refiere a la interconexión digital de objetos cotidianos con Internet.</span></p>
+<p><span style="font-weight:400;">Definición de wikipedia: </span><a href="https://es.wikipedia.org/wiki/Internet_de_las_cosas"><span style="font-weight:400;">https://es.wikipedia.org/wiki/Internet_de_las_cosas</span></a></p>
+<p><span style="font-weight:400;">Arduino es un elemento que nos permite de forma sencilla y económica conectar cosas a Internet. Con un sencillo módulo ethernet o wifi podemos conectar Internet sensores para informar, motores controlados desde cualquier lado del mundo o mandar un SMS o email cada vez que se abra la puerta de casa.</span></p>
+<p><span style="font-weight:400;">Arduino se ha convertido una figura destacada e incluso uno de los impulsores del IoT y no por casualidad, sino que &nbsp;por sus características es un HW con gran capacidad para usar en proyectos de IoT.</span></p>
+<p><span style="font-weight:400;">Características de Arduino para IoT</span></p>
+<ul>
+<li style="font-weight:400;"><span style="font-weight:400;">Barato y rápido prototipado.</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">HW libre y por lo tanto es modificable para que consuma menos y para hacer un HW final de características industriales.</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Disponibilidad de HW de comunicaciones de todo tipo para conectar con Arduino. Nuevas tecnologías de comunicación llegan antes que para elementos comerciales</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Librerías y SW público para su reutilización o adaptación.</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Flexibilidad en la programación.</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Apoyo de la comunidad.</span></li>
+</ul>
+<p><span style="font-weight:400;">IoT en su amplio concepto es conectar a Internet cualquier cosa, teniendo sentido o sin tenerlo. Por ejemplo, podríamos conectar a internet un sofá con un Arduino y unos pocos sensores, este sofá podría tuitear que nos acabamos de sentar a ver nuestra serie favorita, simplemente detectando el peso de la persona y conectándose a una API de un servidor de streaming como netflix y comprobando que acabo de poner un capítulo de Narcos. Pero esta idea para netflix podría ser muy interesante, monitorizar a la gente que ve su canal.</span></p>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/Narcos-3.jpg" width="1920" height="1080"></p>
+<p><span style="font-weight:400;">Otra aplicación de IoT y usando arduino como herramienta, es la de obtener información externa disponible mediante APIs del open data. Un ejemplo es el de un sistema de riego automático que podemos tener en una huerta. En los inicios de la automatización se usaron programadores conectados a una electroválvula donde indicamos las horas entre las que deseamos regar. El siguiente paso fue poner detectores de lluvia para no regar si estaba lloviendo. Otro paso fue poner sensores de temperatura y humedad ambientales y sensores de humedad de suelo que nos indican cuándo debemos regar y en qué áreas de nuestra huerta.</span></p>
+<p><span style="font-weight:400;">El paso más avanzado que ofrece el IoT es poder conectar todo este sistema, ya de por sí muy eficiente, a los opendata meteorológicos disponibles en Internet como el de la aemet (</span><a href="http://www.aemet.es/es/datos_abiertos/AEMET_OpenData"><span style="font-weight:400;">http://www.aemet.es/es/datos_abiertos/AEMET_OpenData</span></a><span style="font-weight:400;">) y que nuestro sistema obtenga datos de prediciones meteorológicas y decida no regar si la predicción de lluvia es mayor del 80% en los próximos dos días o simplemente ajustar el algoritmo de riego en función los valores de los sensores + es de los datos meteorológicos. También puede recibir alertas de tormenta o pedrisco y tomar determinadas acciones o simplemente mandar un email o SMS al propietario del huerto. </span><b>¿Podríamos hacer esto con un sistema comercial?</b></p>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/6feaeb8cd4d4d4b5c662dd8b846945ff.jpg" width="480" height="360"></p>
+<p><span style="font-weight:400;">Esto podría extenderse a explotaciones agrícolas usando un servicio como el sistema de información agroclimática de La Rioja:</span></p>
+<ul>
+<li style="font-weight:400;"><a href="http://www.larioja.org/agricultura/es/informacion-agroclimatica"><span style="font-weight:400;">http://www.larioja.org/agricultura/es/informacion-agroclimatica</span></a></li>
+<li style="font-weight:400;"><span style="font-weight:400;">API: </span><span style="font-weight:400;"><a href="http://apisiar.larioja.org/help">http://apisiar.larioja.org/help</a></span></li>
+</ul>
+<p><span style="font-weight:400;">IoT nos permite actualizar procesos productivos al siglo XXI (Retrofit)</span></p>
+<p><span style="font-weight:400;">Para mi, IoT no es que un coche se pueda conectar a Internet para ver videos de youtube, sino que este coche esté conectado a Internet para que pueda actualizar su firmware automáticamente sin necesidad de ir al concesionario, pueda ser inmovilizado en caso de robo o pueda mandar datos de los parámetros internos del coche para que sean analizados y poder detectar alertas precoces de fallo y actualizar automáticamente ese fallo sin que el usuario tenga que hacer nada o avisar al usuario para que lleve el coche a reparar y parar el coche si el usuario no ha llevado a revisión al cabo de unos kms para evitar males mayores.</span></p>
+<p><span style="font-weight:400;">Explicación de IoT </span><a href="http://www.kaaproject.org/iot-101-what-is-an-iot-platform/"><span style="font-weight:400;">http://www.kaaproject.org/iot-101-what-is-an-iot-platform/</span></a></p>
+<h2><span style="font-weight:400;">Cómo Conectar a Internet una Tostadora?</span></h2>
+<p><span style="font-weight:400;">Veamos un resumen de los elementos que necesitamos para conectar un dispositivo a Internet y hacer un proyecto de IoT completo.</span></p>
+<p><span style="font-weight:400;">Supongamos que quiero conectar mi tostadora a Internet y hacer un sistema que conecte mi coche con la tostadora y cuando me acerque a casa ponga en funcionamiento la tostadora y además me informe en el móvil que la tostadora se pone un funcionamiento y me indique la temperatura de la tostadora.</span></p>
+<p><span style="font-weight:400;">Lo primero que necesito es un sensor para medir la temperatura y un actuador que encienda la tostadora. Para poder leer el sensor y poder manejar el actuador necesitaré un microcontrolador con entradas (</span><b>sensor</b><span style="font-weight:400;">) y salidas (</span><b>actuador</b><span style="font-weight:400;">), por ejemplo, un Arduino.</span></p>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/184_1_HS-7954SH_High_Torque_HV_Coreless_Steel_Gear_Servo-1.jpg" width="800" height="600"></p>
+<p><span style="font-weight:400;">Ahora ya puedo leer los datos de la tostadora y encenderla, el siguiente paso es conectarla a Internet.</span></p>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/adafruit_io_howtocomm.png" width="640" height="263"></p>
+<p><span style="font-weight:400;">Primero necesito acceso a Internet (conectividad), puedo usar ethernet, pero ¿Quien tiene una toma de red en la cocina?</span></p>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/adafruit_io_ethernet.png" width="640" height="240"></p>
+<p><span style="font-weight:400;">Mejor usando comunicaciones inalámbricas como: wifi, bluetooth, redes móviles, XBee, etc…</span></p>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/adafruit_io_tower.png" width="640" height="297"></p>
+<p><span style="font-weight:400;">Una vez tenemos conectividad, necesitamos un protocolo de comunicación para comunicar los datos y las órdenes entre los distintos dispositivos.</span></p>
+<ul>
+<li style="font-weight:400;"><span style="font-weight:400;">HTTP REST</span></li>
+</ul>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/adafruit_io_polling.png" width="640" height="291"></p>
+<ul>
+<li style="font-weight:400;"><span style="font-weight:400;">MQTT</span></li>
+</ul>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/adafruit_io_mqtt.png" width="640" height="262"></p>
+<p><span style="font-weight:400;">Supongamos tenemos nuestra tostadora con un Arduino integrado y un chip WiFi. Hay dos formas en la que pueden hablar entre el geolocalizador del coche y nuestra tostadora.</span></p>
+<ol>
+<li style="font-weight:400;"><span style="font-weight:400;">Tener uno de los dispositivos trabajando como servidor con una dirección IP, de forma que el otro dispositivo se pueda conectar en cualquier momento.</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Tener un tercer servidor y tanto la tostadora como el coche se conecten al servidor y este mande mensajes a uno y otro.</span></li>
+</ol>
+<p><span style="font-weight:400;">La opción 1 es la más barata al no necesitar un elemento extra, pero al menos uno de los dispositivos necesita una IP pública conocida y fija, además hay que abrir puertos en el router de casa lo que supone una dificultad adicional y un punto más en la seguridad.</span></p>
+<p><span style="font-weight:400;">En la opción 2 el servidor maneja los mensajes, en el caso de MQTT se trata del broker. Es un elemento neutral al que las “cosas” se pueden conectar para enviar y recibir mensajes.</span></p>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/adafruit_io_complexmqtt.png" width="640" height="377"></p>
+<p><span style="font-weight:400;">Adicionalmente podemos tener una plataforma que almacene datos y luego podamos visualizarlos, analizarlos, hacer cuadros de mando o interactuar con otras plataformas o servicios de terceros.</span></p>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/AerCloud-Diagram.png" width="960" height="579"></p>
+<p><span style="font-weight:400;">En resumen, al hacer un proyecto IoT debemos hacernos estas preguntas:</span></p>
+<ul>
+<li style="font-weight:400;"><span style="font-weight:400;">Qué quieres medir?</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Cómo lo quieres conectar?</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Qué quieres hacer con los datos?</span></li>
+</ul>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/diagram_image.png" width="3000" height="1930"></p>
+<h2><span style="font-weight:400;">Elementos que intervienen en el IoT</span></h2>
+<p><span style="font-weight:400;">Elementos en IoT:</span></p>
+<ul>
+<li style="font-weight:400;"><b>Sensores, Actuadores, Periféricos…</b><b><br>
+</b><span style="font-weight:400;">Sensores: </span><a href="https://www.artik.io/blog/2015/iot-101-sensors"><span style="font-weight:400;">https://www.artik.io/blog/2015/iot-101-sensors</span></a></li>
+<li style="font-weight:400;"><b>Dispositivos Hardware</b><span style="font-weight:400;"> (por ejemplo Arduino), es el dispositivo con el que vamos a medir o interactuar con él.</span></li>
+<li style="font-weight:400;"><b>Conectividad</b><span style="font-weight:400;">. Medio de comunicación, como vamos a comunicar el HW, ya sea por red o de forma inalámbrica. &nbsp;Ethernet, Wifi, GPRS, </span><a href="https://es.wikipedia.org/wiki/LoRaWAN"><span style="font-weight:400;">LPWAN</span></a><span style="font-weight:400;">, zigbee, bluetooth, ANT+, etc…</span><span style="font-weight:400;"><br>
+</span><span style="font-weight:400;">Conectividad: </span><a href="https://www.artik.io/blog/2015/iot-101-connectivity"><span style="font-weight:400;">https://www.artik.io/blog/2015/iot-101-connectivity</span></a></li>
+</ul>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/lpwan-technologies-for-internet-of-things-iot-and-m2m-scenarios-3-638.jpg" width="638" height="442"></p>
+<ul>
+<li style="font-weight:400;"><b>Protocolos de comunicación</b><span style="font-weight:400;">, lenguaje para comunicar el HW y el SW. HTTP, fiware, MQTT, API REST,…</span><span style="font-weight:400;"><br>
+</span><span style="font-weight:400;">Redes: </span><a href="https://www.artik.io/blog/2015/iot-101-networks"><span style="font-weight:400;">https://www.artik.io/blog/2015/iot-101-networks</span></a></li>
+</ul>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/BUTLER-project-overview-650.jpg" width="650" height="421"></p>
+<ul>
+<li style="font-weight:400;"><b>Plataformas Software</b><span style="font-weight:400;">, para tratar los datos recogidos por nuestros sensores y almacenarlos. Pueden ser plataformas de terceros o plataformas propias desarrolladas por nosotros o simplemente guardar en BBDD propias. Por ejemplo: </span><a href="https://www.carriots.com/"><span style="font-weight:400;">Carriots</span></a><span style="font-weight:400;">, </span><a href="https://thingspeak.com/"><span style="font-weight:400;">Thingspeak</span></a><span style="font-weight:400;">, </span><a href="https://temboo.com/"><span style="font-weight:400;">Temboo</span></a><span style="font-weight:400;">, </span><a href="https://thinger.io/"><span style="font-weight:400;">Thinger</span></a><span style="font-weight:400;">, etc…</span><span style="font-weight:400;"><br>
+</span><span style="font-weight:400;">Además todas estas plataformas SW que están en la nube, deben estar soportadas por un HW de servidores, unas BBDD de gran capacidad y una infraestructura segura que los hospede.</span></li>
+<li style="font-weight:400;"><b>Servicios</b><span style="font-weight:400;">, son los servicios que ofrecen las plataformas como mostrar los datos recogidos, mandar avisos cuando se detecte un evento o la interconexión con otras plataformas o simplemente. Servicios ofrecidos por la plataforma carriots: </span><span style="font-weight:400;"><a href="https://www.carriots.com/que-es-carriots">https://www.carriots.com/que-es-carriots</a></span></li>
+</ul>
+<p style="text-align:center;"><b>Sensor — MCU — Comunicación — Protocolo — Plataforma — Servicios</b></p>
+<p><span style="font-weight:400;">Uno de los retos del IoT es mandar datos de cualquier sensor a través de cualquier protocolo a cualquier plataforma de forma inalámbrica y usando la menor energía posible para uso de baterías.</span></p>
+<p><span style="font-weight:400;">Cadena de valor de IoT:</span></p>
+<p style="text-align:center;"><b>recoger datos — conectar — almacenar — analizar — mostrar — actuar — predecir</b></p>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/codit_iot_valuechain.png" width="843" height="461"></p>
+<h2><span style="font-weight:400;">IoT Manifesto</span></h2>
+<p><span style="font-weight:400;">Arduino IoT Manifesto: </span><a href="https://create.arduino.cc/iot/manifesto/"><span style="font-weight:400;">https://create.arduino.cc/iot/manifesto/</span></a></p>
+<p><b>“Arduino cree que construyendo nuevos productos conectados con SW, HW y protocolos de comunicación open source, podemos hacer un entorno más innovador para los makers, emprendedores y grandes corporaciones. Dando a los usuarios de posibilidad de compartir su trabajo abiertamente, compartimos retos, resolvemos problemas y construimos mejores productos conectados.</b></p>
+<p><b>Estamos seguros que con una aproximación abierta y compartida de SW, HW y protocolos es la mejor solución”</b></p>
+<p><span style="font-weight:400;">Esta aproximación puede extender al mundo empresarial el concepto de DIY, permitiendo hacer pruebas de conceptos y pequeños proyectos por uno mismo y en caso que sea viable lanzarse a proyectos profesionales con el apoyo de expertos.</span></p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			Esta entrada se publicó en <a href="https://aprendiendoarduino.wordpress.com/category/comunicacion/" rel="category tag">Comunicación</a>, <a href="https://aprendiendoarduino.wordpress.com/category/iot/" rel="category tag">IoT</a>, <a href="https://aprendiendoarduino.wordpress.com/category/sensores/" rel="category tag">Sensores</a> y está etiquetada con <a href="https://aprendiendoarduino.wordpress.com/tag/api-rest/" rel="tag">API REST</a>, <a href="https://aprendiendoarduino.wordpress.com/tag/comunicaciones/" rel="tag">Comunicaciones</a>, <a href="https://aprendiendoarduino.wordpress.com/tag/iot/" rel="tag">IoT</a>, <a href="https://aprendiendoarduino.wordpress.com/tag/mqtt/" rel="tag">MQTT</a>, <a href="https://aprendiendoarduino.wordpress.com/tag/plataformas/" rel="tag">plataformas</a>, <a href="https://aprendiendoarduino.wordpress.com/tag/protocolos/" rel="tag">Protocolos</a>, <a href="https://aprendiendoarduino.wordpress.com/tag/sensores/" rel="tag">Sensores</a> en <a href="https://aprendiendoarduino.wordpress.com/2017/03/29/que-es-iot/" title="10:26 pm" rel="bookmark"><time class="entry-date" datetime="2017-03-29T22:26:05+00:00">29 marzo, 2017</time></a><span class="by-author"> por <span class="author vcard"><a class="url fn n" href="https://aprendiendoarduino.wordpress.com/author/jecrespom/" title="Ver todas las entradas de jecrespom" rel="author">jecrespom</a></span></span>.								</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+
+	<article id="post-1529" class="post-1529 post type-post status-publish format-standard hentry category-actuadores category-arduino category-perifericos category-sensores tag-actuadores tag-arduino tag-perifericos tag-sensores">
+				<header class="entry-header">
+			
+						<h1 class="entry-title">
+				<a href="https://aprendiendoarduino.wordpress.com/2016/12/18/sensores-y-actuadores/" rel="bookmark">Sensores y Actuadores</a>
+			</h1>
+										<div class="comments-link">
+					<a href="https://aprendiendoarduino.wordpress.com/2016/12/18/sensores-y-actuadores/#comments">1 respuesta</a>				</div><!-- .comments-link -->
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<h3><b>Sensores</b></h3>
+<p><span style="font-weight:400;">Un sensor es un dispositivo capaz de detectar magnitudes físicas o químicas, llamadas variables de instrumentación, y transformarlas en variables eléctricas. Las variables de instrumentación pueden ser por ejemplo: temperatura, intensidad lumínica, distancia, aceleración, inclinación, desplazamiento, presión, fuerza, torsión, humedad, movimiento, pH, etc. Una magnitud eléctrica puede ser una resistencia eléctrica (como en una RTD), una capacidad eléctrica (como en un sensor de humedad o un sensor capacitivo), una tensión eléctrica (como en un termopar), una corriente eléctrica (como en un fototransistor), etc.</span></p>
+<p><span style="font-weight:400;">Los sensores se pueden clasificar en función de los datos de salida en:</span></p>
+<ul>
+<li style="font-weight:400;"><span style="font-weight:400;">Digitales</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Analógicos</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Comunicación por Bus</span></li>
+</ul>
+<p><span style="font-weight:400;">Los sensores van conectados a las entradas de Arduino.</span></p>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/35Sensor.jpg" alt="" width="1000" height="1000"></p>
+<p><span style="font-weight:400;">A la hora de elegir un sensor, debemos leer detenidamente las características y elegir uno que sea compatible con nuestro sistema (tensión y voltaje) y que sea sencillo de usar o nos faciliten una librería sencilla y potente.</span></p>
+<p><span style="font-weight:400;">Ejemplos de Sensores:</span></p>
+<ul>
+<li style="font-weight:400;"><span style="font-weight:400;">Sensor 4 en 1 temperatura+presión+altitud+luz comunicación por I2C: </span><a href="http://elcajondeardu.blogspot.com.es/2016/04/review-4-sensores-en-1-modulo-medicion.html"><span style="font-weight:400;">http://elcajondeardu.blogspot.com.es/2016/04/review-4-sensores-en-1-modulo-medicion.html</span></a></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Sensor de corriente efecto hall: </span><a href="http://www.allegromicro.com/~/Media/Files/Datasheets/ACS714-Datasheet.ashx"><span style="font-weight:400;">http://www.allegromicro.com/~/Media/Files/Datasheets/ACS714-Datasheet.ashx</span></a></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Sensor de Temperatura y Humedad DHT22: </span><a href="https://www.seeedstudio.com/Grove-Temperature%26amp%3BHumidity-Sensor-Pro-p-838.html"><span style="font-weight:400;">https://www.seeedstudio.com/Grove-Temperature%26amp%3BHumidity-Sensor-Pro-p-838.html</span></a><span style="font-weight:400;"> y librería de uso </span><a href="https://github.com/Seeed-Studio/Grove_Temperature_And_Humidity_Sensor"><span style="font-weight:400;">https://github.com/Seeed-Studio/Grove_Temperature_And_Humidity_Sensor</span></a></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Sensor ultrasonico de distancia: </span><a href="http://hackarobot.com/how-to-use-ultrasonic-distance-sensor-with-arduino/"><span style="font-weight:400;">http://hackarobot.com/how-to-use-ultrasonic-distance-sensor-with-arduino/</span></a></li>
+</ul>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/Ultrasonic-Module-HC-SR04-Distance-Measuring-Transducer-font-b-Sensor-b-font-for-font-b-Arduino.jpg" alt="" width="604" height="599"></p>
+<p><span style="font-weight:400;">Ejercicio con sensor de temperatura: </span><a href="https://aprendiendoarduino.wordpress.com/2016/07/02/sensor-de-temperatura/"><span style="font-weight:400;">https://aprendiendoarduino.wordpress.com/2016/07/02/sensor-de-temperatura/</span></a></p>
+<h3><b>Actuadores y Periféricos</b></h3>
+<p><span style="font-weight:400;">Un </span><b>actuador </b><span style="font-weight:400;">es un dispositivo capaz de transformar energía hidráulica, neumática o eléctrica en la activación de un proceso con la finalidad de generar un efecto sobre elemento externo. Este recibe la orden de un regulador, controlador o en nuestro caso un Arduino y en función a ella genera la orden para activar un elemento final de control como, por ejemplo, una válvula.</span></p>
+<p><span style="font-weight:400;">Existen varios tipos de actuadores como son:</span></p>
+<ul>
+<li style="font-weight:400;"><span style="font-weight:400;">Electrónicos</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Hidráulicos</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Neumáticos</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Eléctricos</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Motores</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Bombas</span></li>
+</ul>
+<p><span style="font-weight:400;">Los actuadores van conectados a las salidas de Arduino.</span></p>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/1438-00.jpg" alt="" width="970" height="728"></p>
+<p><b>Periférico </b><span style="font-weight:400;">es la denominación genérica para designar al aparato o dispositivo auxiliar e independiente conectado a la unidad central de procesamiento o en este caso a Arduino. Se consideran periféricos a las unidades o dispositivos de hardware a través de los cuales Arduino se comunica con el exterior, y también a los sistemas que almacenan o archivan la información, sirviendo de memoria auxiliar de la memoria principal.</span></p>
+<p><span style="font-weight:400;">Ejemplos de periféricos:</span></p>
+<ul>
+<li style="font-weight:400;"><span style="font-weight:400;">Pantallas LCD</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Teclados</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Memorias externas</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Cámaras</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Micrófonos</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Impresoras</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Pantalla táctil</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Displays numéricos</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Zumbadores</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Indicadores luminosos, etc…</span></li>
+</ul>
+<p><img class="alignnone size-full" src="./Sensores _ Aprendiendo Arduino_files/learn_arduino_overview.jpg" alt="" width="640" height="604"></p>
+<p><span style="font-weight:400;">Para cada actuador o periférico, necesitamos un “driver” o manejador para poder mandar órdenes desde Arduino.</span></p>
+<ul>
+<li style="font-weight:400;"><span style="font-weight:400;">Recordad que los pines de Arduino solo pueden manejar un máximo de 40mA y recomendable usar 20mA de forma continua.</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Recordar que Arduino solo puede manejar un total de 200 mA de salida. Es decir que la corriente máxima que admite Vcc y GND son 200 mA.</span></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Recordar que los pines Arduino solo pueden tener los valores de 5V (3.3V en algunos modelos) y 0V. No es posible cualquier otro valor de tensión.</span></li>
+</ul>
+<p><span style="font-weight:400;">A la hora de seleccionar un actuador o periférico para usar con arduino habrá que ver sus características y cómo hacer el interface con arduino. En el playground de Arduino existe una gran base de datos de conocimiento para conectar Arduino con casi cualquier HW: </span><a href="http://playground.arduino.cc/Main/InterfacingWithHardware"><span style="font-weight:400;">http://playground.arduino.cc/Main/InterfacingWithHardware</span></a></p>
+<p><span style="font-weight:400;">Tutoriales para conectar Arduino con diversos dispositivos: </span><a href="http://playground.arduino.cc/Learning/Tutorials"><span style="font-weight:400;">http://playground.arduino.cc/Learning/Tutorials</span></a></p>
+<p><span style="font-weight:400;">Ejemplos de Actuadores y periféricos:</span></p>
+<ul>
+<li style="font-weight:400;"><span style="font-weight:400;">Sacar por TV datos de Arduino, librería TV OUT: </span><a href="http://real2electronics.blogspot.com.es/2010/11/libreria-tvout.html"><span style="font-weight:400;">http://real2electronics.blogspot.com.es/2010/11/libreria-tvout.html</span></a></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Relés: Los Relay Shield ya tienen integrados los relés y los drives, lo que nos facilita el trabajo, incluso algunas shields incluyen su librería: </span><a href="http://www.seeedstudio.com/wiki/Relay_Shield"><span style="font-weight:400;">http://www.seeedstudio.com/wiki/Relay_Shield</span></a></li>
+<li style="font-weight:400;"><span style="font-weight:400;">Displays: </span><a href="https://www.seeedstudio.com/s/display.html"><span style="font-weight:400;">https://www.seeedstudio.com/s/display.html</span></a><span style="font-weight:400;"> y </span><a href="https://www.sparkfun.com/categories/76"><span style="font-weight:400;">https://www.sparkfun.com/categories/76</span></a></li>
+</ul>
+<p><span style="font-weight:400;">Otro tipo de actuadores son los motores. Más información de motores en: </span><a href="https://aprendiendoarduino.wordpress.com/2016/07/04/motores/"><span style="font-weight:400;">https://aprendiendoarduino.wordpress.com/2016/07/04/motores/</span></a></p>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			Esta entrada se publicó en <a href="https://aprendiendoarduino.wordpress.com/category/actuadores/" rel="category tag">Actuadores</a>, <a href="https://aprendiendoarduino.wordpress.com/category/arduino/" rel="category tag">Arduino</a>, <a href="https://aprendiendoarduino.wordpress.com/category/perifericos/" rel="category tag">Periféricos</a>, <a href="https://aprendiendoarduino.wordpress.com/category/sensores/" rel="category tag">Sensores</a> y está etiquetada con <a href="https://aprendiendoarduino.wordpress.com/tag/actuadores/" rel="tag">Actuadores</a>, <a href="https://aprendiendoarduino.wordpress.com/tag/arduino/" rel="tag">Arduino</a>, <a href="https://aprendiendoarduino.wordpress.com/tag/perifericos/" rel="tag">Periféricos</a>, <a href="https://aprendiendoarduino.wordpress.com/tag/sensores/" rel="tag">Sensores</a> en <a href="https://aprendiendoarduino.wordpress.com/2016/12/18/sensores-y-actuadores/" title="9:16 am" rel="bookmark"><time class="entry-date" datetime="2016-12-18T09:16:06+00:00">18 diciembre, 2016</time></a><span class="by-author"> por <span class="author vcard"><a class="url fn n" href="https://aprendiendoarduino.wordpress.com/author/jecrespom/" title="Ver todas las entradas de jecrespom" rel="author">jecrespom</a></span></span>.								</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+		<nav id="nav-below" class="navigation" role="navigation">
+			<h3 class="assistive-text">Navegador de artículos</h3>
+			<div class="nav-previous"><a href="https://aprendiendoarduino.wordpress.com/category/sensores/page/2/"><span class="meta-nav">←</span> Entradas más antiguas</a></div>
+			<div class="nav-next"></div>
+		</nav><!-- .navigation -->
+	
+		
+		<div id="infinite-handle"><span><button>Entradas antiguas</button></span></div></div><!-- #content -->
+	</section><!-- #primary -->
+
+
+			<div id="secondary" class="widget-area" role="complementary">
+						<aside id="search-4" class="widget widget_search"><form role="search" method="get" id="searchform" class="searchform" action="https://aprendiendoarduino.wordpress.com/">
+				<div>
+					<label class="screen-reader-text" for="s">Buscar:</label>
+					<input type="text" value="" name="s" id="s">
+					<input type="submit" id="searchsubmit" value="Buscar">
+				</div>
+			</form></aside><aside id="text-3" class="widget widget_text"><h3 class="widget-title">AprendiendoArduino</h3>			<div class="textwidget">Dudas y Consultas: 
+<p><a href="mailto:aprendiendoarduino@gmail.com">aprendiendoarduino@gmail.com</a></p>
+
+Web Principal:<br>
+<a href="https://www.aprendiendoarduino.com/" target="_blank">www.aprendiendoarduino.com</a>
+<a href="https://www.aprendiendoarduino.com/" target="_blank"><img src="./Sensores _ Aprendiendo Arduino_files/cropped-aprendiendoarduino_logo.png"></a></div>
+		</aside><aside id="wpcom_social_media_icons_widget-3" class="widget widget_wpcom_social_media_icons_widget"><h3 class="widget-title">Social</h3><ul><li><a href="https://twitter.com/jecrespom/" class="genericon genericon-twitter" target="_blank"><span class="screen-reader-text">Ver perfil de jecrespom en Twitter</span></a></li><li><a href="https://www.linkedin.com/in/enriquecrespo/" class="genericon genericon-linkedin" target="_blank"><span class="screen-reader-text">Ver perfil de enriquecrespo en LinkedIn</span></a></li><li><a href="https://github.com/jecrespo/" class="genericon genericon-github" target="_blank"><span class="screen-reader-text">Ver perfil de jecrespo en GitHub</span></a></li></ul></aside><aside id="text-4" class="widget widget_text"><h3 class="widget-title">Código en GitHub</h3>			<div class="textwidget"><img src="./Sensores _ Aprendiendo Arduino_files/github-mark.png">
+<a href="https://github.com/jecrespo" target="_blank">Repositorio jecrespo</a>
+<br>
+<a href="https://github.com/jecrespo/Aprendiendo-Arduino" target="_blank">Prácticas</a>
+<br>
+<a href="https://github.com/jecrespo/Aprendiendo-Arduino-Proyectos" target="_blank">Proyectos</a>
+<br>
+<a href="https://github.com/jecrespo/Aprendiendo-Arduino/archive/master.zip" target="_blank">Descargar prácticas</a></div>
+		</aside><aside id="text-5" class="widget widget_text"><h3 class="widget-title">Licencia</h3>			<div class="textwidget"><p><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"><img style="border-width:0;" src="./Sensores _ Aprendiendo Arduino_files/88x31.png" alt="Licencia de Creative Commons"></a><br>
+Aprendiendo Arduino by <a href="https://aprendiendoarduino.wordpress.com/" rel="cc:attributionURL">Enrique Crespo</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional License</a>.</p></div>
+		</aside><aside id="tag_cloud-2" class="widget widget_tag_cloud"><h3 class="widget-title"></h3><div style="overflow: hidden;"><a href="https://aprendiendoarduino.wordpress.com/category/arduino/" style="font-size: 275%; padding: 1px; margin: 1px;" title="Arduino (339)">Arduino</a> <a href="https://aprendiendoarduino.wordpress.com/category/arduino-day/" style="font-size: 107.44680851064%; padding: 1px; margin: 1px;" title="Arduino Day (24)">Arduino Day</a> <a href="https://aprendiendoarduino.wordpress.com/category/avanzado/" style="font-size: 107.44680851064%; padding: 1px; margin: 1px;" title="Avanzado (24)">Avanzado</a> <a href="https://aprendiendoarduino.wordpress.com/category/c/" style="font-size: 104.78723404255%; padding: 1px; margin: 1px;" title="C++ (19)">C++</a> <a href="https://aprendiendoarduino.wordpress.com/category/comunicacion/" style="font-size: 103.1914893617%; padding: 1px; margin: 1px;" title="Comunicación (16)">Comunicación</a> <a href="https://aprendiendoarduino.wordpress.com/category/comunidad/" style="font-size: 102.12765957447%; padding: 1px; margin: 1px;" title="Comunidad (14)">Comunidad</a> <a href="https://aprendiendoarduino.wordpress.com/category/curso-avanzado-2017/" style="font-size: 111.17021276596%; padding: 1px; margin: 1px;" title="Curso Avanzado 2017 (31)">Curso Avanzado 2017</a> <a href="https://aprendiendoarduino.wordpress.com/category/curso-iniciacion-2017/" style="font-size: 129.25531914894%; padding: 1px; margin: 1px;" title="Curso Iniciación 2017 (65)">Curso Iniciación 2017</a> <a href="https://aprendiendoarduino.wordpress.com/category/curso-programacion-arduino/" style="font-size: 105.31914893617%; padding: 1px; margin: 1px;" title="Curso Programación Arduino (20)">Curso Programación Arduino</a> <a href="https://aprendiendoarduino.wordpress.com/category/entradas-analogicas/" style="font-size: 100.53191489362%; padding: 1px; margin: 1px;" title="Entradas Analógicas (11)">Entradas Analógicas</a> <a href="https://aprendiendoarduino.wordpress.com/category/entradas-digitales/" style="font-size: 100.53191489362%; padding: 1px; margin: 1px;" title="Entradas Digitales (11)">Entradas Digitales</a> <a href="https://aprendiendoarduino.wordpress.com/category/esp8266/" style="font-size: 101.06382978723%; padding: 1px; margin: 1px;" title="ESP8266 (12)">ESP8266</a> <a href="https://aprendiendoarduino.wordpress.com/category/hardware/" style="font-size: 134.57446808511%; padding: 1px; margin: 1px;" title="Hardware (75)">Hardware</a> <a href="https://aprendiendoarduino.wordpress.com/category/hardware-libre/" style="font-size: 100.53191489362%; padding: 1px; margin: 1px;" title="Hardware Libre (11)">Hardware Libre</a> <a href="https://aprendiendoarduino.wordpress.com/category/ide/" style="font-size: 110.63829787234%; padding: 1px; margin: 1px;" title="IDE (30)">IDE</a> <a href="https://aprendiendoarduino.wordpress.com/category/iot/" style="font-size: 103.1914893617%; padding: 1px; margin: 1px;" title="IoT (16)">IoT</a> <a href="https://aprendiendoarduino.wordpress.com/category/librerias-arduino/" style="font-size: 106.91489361702%; padding: 1px; margin: 1px;" title="Librerías Arduino (23)">Librerías Arduino</a> <a href="https://aprendiendoarduino.wordpress.com/category/memoria/" style="font-size: 100%; padding: 1px; margin: 1px;" title="Memoria (10)">Memoria</a> <a href="https://aprendiendoarduino.wordpress.com/category/microcontrolador/" style="font-size: 100%; padding: 1px; margin: 1px;" title="Microcontrolador (10)">Microcontrolador</a> <a href="https://aprendiendoarduino.wordpress.com/category/motores/" style="font-size: 101.06382978723%; padding: 1px; margin: 1px;" title="Motores (12)">Motores</a> <a href="https://aprendiendoarduino.wordpress.com/category/presentacion/" style="font-size: 105.31914893617%; padding: 1px; margin: 1px;" title="Presentacion (20)">Presentacion</a> <a href="https://aprendiendoarduino.wordpress.com/category/programacion/" style="font-size: 135.63829787234%; padding: 1px; margin: 1px;" title="Programación (77)">Programación</a> <a href="https://aprendiendoarduino.wordpress.com/category/programacion-visual/" style="font-size: 100.53191489362%; padding: 1px; margin: 1px;" title="Programación Visual (11)">Programación Visual</a> <a href="https://aprendiendoarduino.wordpress.com/category/proyecto/" style="font-size: 104.78723404255%; padding: 1px; margin: 1px;" title="Proyecto (19)">Proyecto</a> <a href="https://aprendiendoarduino.wordpress.com/category/practica/" style="font-size: 138.82978723404%; padding: 1px; margin: 1px;" title="Práctica (83)">Práctica</a> <a href="https://aprendiendoarduino.wordpress.com/category/puerto-serie/" style="font-size: 101.59574468085%; padding: 1px; margin: 1px;" title="Puerto Serie (13)">Puerto Serie</a> <a href="https://aprendiendoarduino.wordpress.com/category/salidas-digitales/" style="font-size: 100%; padding: 1px; margin: 1px;" title="Salidas Digitales (10)">Salidas Digitales</a> <a href="https://aprendiendoarduino.wordpress.com/category/sensores/" style="font-size: 101.06382978723%; padding: 1px; margin: 1px;" title="Sensores (12)">Sensores</a> <a href="https://aprendiendoarduino.wordpress.com/category/sketch/" style="font-size: 101.59574468085%; padding: 1px; margin: 1px;" title="Sketch (13)">Sketch</a> <a href="https://aprendiendoarduino.wordpress.com/category/software/" style="font-size: 111.17021276596%; padding: 1px; margin: 1px;" title="Software (31)">Software</a> </div></aside><aside id="twitter_timeline-2" class="widget widget_twitter_timeline"><h3 class="widget-title">Sígueme en Twitter</h3><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="twitter-timeline twitter-timeline-rendered" style="position: static; visibility: visible; display: inline-block; width: 225px; height: 5786.53px; padding: 0px; border: none; max-width: 100%; min-width: 180px; margin-top: 0px; margin-bottom: 0px;" data-widget-id="540170807126003712" title="Cronología de Twitter" src="./Sensores _ Aprendiendo Arduino_files/saved_resource.html"></iframe></aside><aside id="blog_subscription-3" class="widget widget_blog_subscription"><h3 class="widget-title"><label for="subscribe-field">Sigue el blog por Email</label></h3>
+				<form action="https://subscribe.wordpress.com/" method="post" accept-charset="utf-8" id="subscribe-blog">
+											<p>Introduce tu dirección de correo electrónico para seguir este Blog y recibir las notificaciones de las nuevas publicaciones en tu buzón de correo electrónico.</p>
+<p>Únete a otros 270 seguidores</p>
+						<p><input type="text" name="email" style="width: 95%; padding: 1px 2px" placeholder="Introduce tu dirección de correo electrónico" value="" id="subscribe-field"></p>
+					
+					<p>
+						<input type="hidden" name="action" value="subscribe">
+						<input type="hidden" name="blog_id" value="79097838">
+						<input type="hidden" name="source" value="https://aprendiendoarduino.wordpress.com/category/sensores/">
+						<input type="hidden" name="sub-type" value="widget">
+						<input type="hidden" name="redirect_fragment" value="blog_subscription-3">
+						<input type="hidden" id="_wpnonce" name="_wpnonce" value="77900b1d20">						<input type="submit" value="Seguir">
+					</p>
+				</form>
+			
+</aside><aside id="authors-4" class="widget widget_authors"><h3 class="widget-title">Autores</h3><ul><li><a href="https://aprendiendoarduino.wordpress.com/author/jecrespom/"> <img alt="" src="./Sensores _ Aprendiendo Arduino_files/09d04cf9ac642c742450e91fd7744e9c" class="avatar avatar-48 grav-hashed" height="48" width="48" id="grav-09d04cf9ac642c742450e91fd7744e9c-0"> <strong>jecrespom</strong></a></li></ul></aside>		</div><!-- #secondary -->
+		</div><!-- #main .wrapper -->
+	<footer id="colophon" role="contentinfo">
+		<div class="site-info">
+						<a href="https://wordpress.com/?ref=footer_blog">Blog de WordPress.com.</a>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+		<script type="text/javascript">
+		//<![CDATA[
+		var infiniteScroll = {"settings":{"id":"content","ajaxurl":"https:\/\/aprendiendoarduino.wordpress.com\/?infinity=scrolling","type":"click","wrapper":true,"wrapper_class":"infinite-wrap","footer":"page","click_handle":"1","text":"Entradas antiguas","totop":"Ir arriba","currentday":"18.12.16","order":"DESC","scripts":[],"styles":[],"google_analytics":false,"offset":0,"history":{"host":"aprendiendoarduino.wordpress.com","path":"\/category\/sensores\/page\/%d\/","use_trailing_slashes":true,"parameters":""},"query_args":{"category_name":"sensores","error":"","m":"","p":0,"post_parent":"","subpost":"","subpost_id":"","attachment":"","attachment_id":0,"name":"","pagename":"","page_id":0,"second":"","minute":"","hour":"","day":0,"monthnum":0,"year":0,"w":0,"tag":"","cat":1029386,"tag_id":"","author":"","author_name":"","feed":"","tb":"","paged":0,"meta_key":"","meta_value":"","preview":"","s":"","sentence":"","title":"","fields":"","menu_order":"","embed":"","category__in":[],"category__not_in":[],"category__and":[],"post__in":[],"post__not_in":[],"post_name__in":[],"tag__in":[],"tag__not_in":[],"tag__and":[],"tag_slug__in":[],"tag_slug__and":[],"post_parent__in":[],"post_parent__not_in":[],"author__in":[],"author__not_in":[],"posts_per_page":5,"ignore_sticky_posts":false,"suppress_filters":false,"cache_results":false,"update_post_term_cache":true,"lazy_load_term_meta":true,"update_post_meta_cache":true,"post_type":"","nopaging":false,"comments_per_page":"50","no_found_rows":false,"order":"DESC"},"last_post_date":"2016-12-18 09:16:06","stats":"blog=79097838&v=wpcom&tz=1&user_id=0&subd=aprendiendoarduino&x_pagetype=infinite-click"}};
+		//]]>
+		</script>
+		<!--  -->
+<script type="text/javascript" src="./Sensores _ Aprendiendo Arduino_files/gprofiles.js.descarga"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Sensores _ Aprendiendo Arduino_files/wpgroho.js.descarga"></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+
+			if (typeof Gravatar === "undefined"){
+				return;
+			}
+
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	</div>
+
+	<div id="carousel-reblog-box">
+		<form action="https://aprendiendoarduino.wordpress.com/category/sensores/#" name="carousel-reblog">
+			<textarea id="carousel-reblog-content" name="carousel-reblog-content" placeholder="Añade tus pensamientos aquí... (opcional)"></textarea>
+			<label for="carousel-reblog-to-blog-id" id="carousel-reblog-lblogid">Publicar en</label>
+			<select name="carousel-reblog-to-blog-id" id="carousel-reblog-to-blog-id">
+						</select>
+
+			<div class="submit">
+				<span class="canceltext"><a href="https://aprendiendoarduino.wordpress.com/category/sensores/#" class="cancel">Cancelar</a></span>
+				<input type="submit" name="carousel-reblog-submit" class="button" id="carousel-reblog-submit" value="Rebloguear entrada">
+				<input type="hidden" id="carousel-reblog-blog-id" value="79097838">
+				<input type="hidden" id="carousel-reblog-blog-url" value="https://aprendiendoarduino.wordpress.com">
+				<input type="hidden" id="carousel-reblog-blog-title" value="Aprendiendo Arduino">
+				<input type="hidden" id="carousel-reblog-post-url" value="">
+				<input type="hidden" id="carousel-reblog-post-title" value="">
+			</div>
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="636bce1e43"><input type="hidden" name="_wp_http_referer" value="/category/sensores/">		</form>
+
+		<div class="arrow"></div>
+	</div>
+<link rel="stylesheet" id="all-css-0-2" href="./Sensores _ Aprendiendo Arduino_files/jetpack-carousel.css" type="text/css" media="all">
+<!--[if lte IE 8]>
+<link rel='stylesheet' id='jetpack-carousel-ie8fix-css'  href='https://s1.wp.com/wp-content/mu-plugins/carousel/jetpack-carousel-ie8fix.css?m=1412618825h&#038;ver=20121024' type='text/css' media='all' />
+<![endif]-->
+<link rel="stylesheet" id="all-css-2-2" href="./Sensores _ Aprendiendo Arduino_files/saved_resource(4)" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var actionbardata = {"siteID":"79097838","siteName":"Aprendiendo Arduino","siteURL":"http:\/\/aprendiendoarduino.wordpress.com","icon":"<img alt='' src='https:\/\/secure.gravatar.com\/blavatar\/bbfc45b79aa1fb3ddff3eb547fd835b3?s=50&d=https%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwpcom-gray-white.png' class='avatar avatar-50' height='50' width='50' \/>","canManageOptions":"","canCustomizeSite":"","isFollowing":"","themeSlug":"pub\/twentytwelve","signupURL":"https:\/\/wordpress.com\/start\/","loginURL":"https:\/\/aprendiendoarduino.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Faprendiendoarduino.wordpress.com%2F2017%2F06%2F24%2Fejemplo-sensor-de-temperatura%2F","themeURL":"https:\/\/wordpress.com\/theme\/twentytwelve\/","xhrURL":"https:\/\/aprendiendoarduino.wordpress.com\/wp-admin\/admin-ajax.php","nonce":"1a33daae84","isSingular":"","isFolded":"","isLoggedIn":"","isMobile":"","subscribeNonce":"<input type=\"hidden\" id=\"_wpnonce\" name=\"_wpnonce\" value=\"77900b1d20\" \/>","referer":"https:\/\/aprendiendoarduino.wordpress.com\/category\/sensores\/","canFollow":"1","feedID":"26189399","statusMessage":"","customizeLink":"https:\/\/aprendiendoarduino.wordpress.com\/wp-admin\/customize.php?url=https%3A%2F%2Faprendiendoarduino.wordpress.com%2Fcategory%2Fsensores%2F","i18n":{"view":"Ver sitio","follow":"Seguir","following":"Siguiendo","edit":"Editar","login":"Acceder","signup":"Registrarse","customize":"Personalizar","report":"Denunciar este contenido","themeInfo":"Obtener el tema: Twenty Twelve","shortlink":"Copiar enlace corto","copied":"Copiado","followedText":"Las nuevas publicaciones de este sitio aparecer\u00e1n ahora en tu <a href=\"https:\/\/wordpress.com\/\">Lector<\/a>","foldBar":"Contraer esta barra","unfoldBar":"Expandir esta barra","editSubs":"Gestionar las suscripciones","viewReader":"Ver sitio en el Lector","viewReadPost":"View post in Reader","subscribe":"Suscr\u00edbeme","enterEmail":"Introduce tu direcci\u00f3n de correo electr\u00f3nico","followers":"\u00danete a otros 270 seguidores","alreadyUser":"\u00bfYa tienes una cuenta de WordPress.com? <a href=\"https:\/\/aprendiendoarduino.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Faprendiendoarduino.wordpress.com%2F2017%2F06%2F24%2Fejemplo-sensor-de-temperatura%2F\">Accede ahora<\/a>.","stats":"Estad\u00edsticas"}};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"es","ajaxurl":"https:\/\/aprendiendoarduino.wordpress.com\/wp-admin\/admin-ajax.php","nonce":"83b45ffb92","display_exif":"1","display_geo":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Comentario","post_comment":"Publicar comentario","write_comment":"Escribir un Comentario...","loading_comments":"Cargando comentarios...","download_original":"Ver tama\u00f1o completo <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Por favor, aseg\u00farate de enviar el texto con tu comentario.","no_comment_email":"Por favor, proporciona una direcci\u00f3n de correo electr\u00f3nico para comentar.","no_comment_author":"Por favor, a\u00f1ade tu nombre al comentario.","comment_post_error":"Lo sentimos, pero hubo un error al publicar tu comentario. Por favor, vuelve a intentarlo m\u00e1s tarde.","comment_approved":"Se aprob\u00f3 tu comentario.","comment_unapproved":"Tu comentario est\u00e1 en moderaci\u00f3n.","camera":"C\u00e1mara","aperture":"Abertura","shutter_speed":"Velocidad de obturaci\u00f3n","focal_length":"Longitud focal","comment_registration":"0","require_name_email":"1","login_url":"https:\/\/aprendiendoarduino.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Faprendiendoarduino.wordpress.com%2F2017%2F06%2F24%2Fejemplo-sensor-de-temperatura%2F","blog_id":"79097838","local_comments_commenting_as":"<fieldset><label for=\"email\">Correo electr\u00f3nico (Obligatorio)<\/label> <input type=\"text\" name=\"email\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-email-field\" \/><\/fieldset><fieldset><label for=\"author\">Nombre (Obligatorio)<\/label> <input type=\"text\" name=\"author\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-author-field\" \/><\/fieldset><fieldset><label for=\"url\">Web<\/label> <input type=\"text\" name=\"url\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-url-field\" \/><\/fieldset>","reblog":"Rebloguear","reblogged":"Reblogueado","reblog_add_thoughts":"A\u00f1ade tus pensamientos aqu\u00ed... (opcional)","reblogging":"Reblogueando...","post_reblog":"Reblog de entrada","stats_query_args":"blog=79097838&v=wpcom&tz=1&user_id=0&subd=aprendiendoarduino","is_public":"1","reblog_enabled":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Sensores _ Aprendiendo Arduino_files/saved_resource(5)"></script><div id="actionbar" class="actnbr-pub-twentytwelve actnbr-has-follow"><ul><li class="actnbr-btn actnbr-hidden"> 			    	<a class="actnbr-action actnbr-actn-follow" href="https://aprendiendoarduino.wordpress.com/category/sensores/"><svg class="gridicon gridicon__follow" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M23 16v2h-3v3h-2v-3h-3v-2h3v-3h2v3h3zM20 2v9h-4v3h-3v4H4c-1.1 0-2-.9-2-2V2h18zM8 13v-1H4v1h4zm3-3H4v1h7v-1zm0-2H4v1h7V8zm7-4H4v2h14V4z"></path></g></svg><span>Seguir</span></a> 			    	<div class="actnbr-popover tip tip-top-left actnbr-notice"> 			    		<div class="tip-arrow"></div> 			    		<div class="tip-inner actnbr-follow-bubble"></div> 			    	</div> 			    </li><li class="actnbr-ellipsis actnbr-hidden"> 			  <svg class="gridicon gridicon__ellipsis" height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><circle cx="5" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle></g></svg> 			  <div class="actnbr-popover tip tip-top-left actnbr-more"> 			  	<div class="tip-arrow"></div> 			  	<div class="tip-inner"> 				  <ul> 				    <li class="actnbr-sitename actnbr-hidden"><a href="http://aprendiendoarduino.wordpress.com/"><img alt="" src="./Sensores _ Aprendiendo Arduino_files/bbfc45b79aa1fb3ddff3eb547fd835b3" class="avatar avatar-50" height="50" width="50"> Aprendiendo Arduino</a></li> 				   	<li class="actnbr-folded-customize actnbr-hidden"><a href="https://aprendiendoarduino.wordpress.com/wp-admin/customize.php?url=https%3A%2F%2Faprendiendoarduino.wordpress.com%2Fcategory%2Fsensores%2F"><svg class="gridicon gridicon__customize" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M2 6c0-1.505.78-3.08 2-4 0 .845.69 2 2 2 1.657 0 3 1.343 3 3 0 .386-.08.752-.212 1.09.74.594 1.476 1.19 2.19 1.81L8.9 11.98c-.62-.716-1.214-1.454-1.807-2.192C6.753 9.92 6.387 10 6 10c-2.21 0-4-1.79-4-4zm12.152 6.848l1.34-1.34c.607.304 1.283.492 2.008.492 2.485 0 4.5-2.015 4.5-4.5 0-.725-.188-1.4-.493-2.007L18 9l-2-2 3.507-3.507C18.9 3.188 18.225 3 17.5 3 15.015 3 13 5.015 13 7.5c0 .725.188 1.4.493 2.007L3 20l2 2 6.848-6.848c1.885 1.928 3.874 3.753 5.977 5.45l1.425 1.148 1.5-1.5-1.15-1.425c-1.695-2.103-3.52-4.092-5.448-5.977z" data-reactid=".2.1.1:0.1b.0"></path></g></svg><span>Personalizar<span></span></span></a></li> 				    <li class="actnbr-folded-follow actnbr-hidden"><a class="actnbr-action actnbr-actn-follow" href="https://aprendiendoarduino.wordpress.com/category/sensores/"><svg class="gridicon gridicon__follow" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M23 16v2h-3v3h-2v-3h-3v-2h3v-3h2v3h3zM20 2v9h-4v3h-3v4H4c-1.1 0-2-.9-2-2V2h18zM8 13v-1H4v1h4zm3-3H4v1h7v-1zm0-2H4v1h7V8zm7-4H4v2h14V4z"></path></g></svg><span>Seguir</span></a></li> 					<li class="actnbr-signup actnbr-hidden"><a href="https://wordpress.com/start/">Registrarse</a></li> 				    <li class="actnbr-login actnbr-hidden"><a href="https://aprendiendoarduino.wordpress.com/wp-login.php?redirect_to=https%3A%2F%2Faprendiendoarduino.wordpress.com%2F2017%2F06%2F24%2Fejemplo-sensor-de-temperatura%2F">Acceder</a></li> 				     				     				    <li class="flb-report actnbr-hidden"><a href="http://en.wordpress.com/abuse/">Denunciar este contenido</a></li> 				     				     				    <li class="actnbr-subs actnbr-hidden"><a href="https://subscribe.wordpress.com/">Gestionar las suscripciones</a></li> 				    <li class="actnbr-fold actnbr-hidden"><a href="https://aprendiendoarduino.wordpress.com/category/sensores/">Contraer esta barra</a></li> 			      </ul> 			    </div> 		      </div> 		    </li> 	      </ul></div>
+<script type="text/javascript" src="./Sensores _ Aprendiendo Arduino_files/widgets.js(1).descarga"></script>
+<script type="text/javascript" src="./Sensores _ Aprendiendo Arduino_files/saved_resource(6)"></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script>	<script type="text/javascript">
+	var skimlinks_pub_id = "725X584219"
+	var skimlinks_sitename = "aprendiendoarduino.wordpress.com";
+	</script>
+	<script type="text/javascript" defer="" src="./Sensores _ Aprendiendo Arduino_files/725X1342.skimlinks.js.descarga"></script><script type="text/javascript">
+			jQuery.extend( infiniteScroll.settings.scripts, ["jquery","jquery-core","jquery-migrate","mobile-useragent-info","postmessage","jquery_inview","jetpack_resize","spin","jquery.spin","grofiles-cards","wpgroho","devicepx","jetpack_likes_queuehandler","the-neverending-homepage","twentytwelve-navigation","jetpack-twitter-timeline","wpcom-masterbar-js","wpcom-masterbar-tracks-js","wpcom-actionbar-bar","jetpack-carousel","swfobject","videopress","twitter-widgets","twitter-widgets-infinity","twitter-widgets-pending","tiled-gallery"] );
+			jQuery.extend( infiniteScroll.settings.styles, ["wpcom-smileys","jetpack_likes","wordads-global","wordads-twentytwelve","the-neverending-homepage","wpcom-core-compat-playlist-styles","wpcom-text-widget-styles","mp6hacks","wpcom-bbpress2-staff-css","twentytwelve-style","twentytwelve-wpcom-style","jetpack-widget-social-icons-styles","jetpack_social_media_icons_widget","noticons","geo-location-flair","reblogging","infinity-twentytwelve","wpcom-actionbar-bar","h4-global","twentytwelve-fonts","twentytwelve-ie","jetpack-carousel","genericons","tiled-gallery","jetpack-carousel-ie8fix"] );
+		</script><script src="./Sensores _ Aprendiendo Arduino_files/w.js.descarga" type="text/javascript" async="" defer=""></script>
+<script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'79097838','blog_tz':'1','user_lang':'es','blog_lang':'es','user_id':'0'}]);
+_stq.push(['view', {'blog':'79097838','v':'wpcom','tz':'1','user_id':'0','subd':'aprendiendoarduino'}]);
+_stq.push(['extra', {'crypt':'UE5XaGUuOTlwaD85flAmcm1mcmZsaDhkV11YdWFnNncxc1tjZG9XVXhRPVVUWGtwT3lGZHZER1pobThfRzk1VUE/NXpxWWt6VFh0LnNuTVExLVNibUJIOG4xWjFqMF83MyYmRTBNVWY4ODlMN3FCWFIxWjNXdGo5NHZ0LEFDPy5xVzlKMDhIOFU3N1BwN0dzZWhSRU9ILTElUFF2T2JoYnBkMXpFZE81ekpuYTlIPzVrUENKakctLj9vWWItJnRHaXIuWWFVXXZDP0RNPWVZJUNzUWx1Y3Q/ZTU9Ky12eHV5TGhrSTN+TFBPYm9sYTh4cV8vdkM2aXhqZG89SWQ2TXNwMHVBSHg2PUc0JWJKVS4lN0lvcnQ0SzdDd0ZsRzVkRWVrJVZDRjJ5WlpZ'}]);
+_stq.push([ 'clickTrackerInit', '79097838', '0' ]);
+	</script>
+<noscript>&lt;img src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /&gt;</noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+<iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe" src="./Sensores _ Aprendiendo Arduino_files/saved_resource(7).html"></iframe><img src="./Sensores _ Aprendiendo Arduino_files/g.gif" alt=":)" id="wpstats"></body></html>
