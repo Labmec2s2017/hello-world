@@ -1,0 +1,80 @@
+#include <SoftwareSerial.h> //libreria para el bluetooth hc05
+
+SoftwareSerial BTserial(0,1);//RX,TX se definen la conexion recepcion y transmision del bluetooth y arduino uno
+
+
+//este codigo permite calibrar el anillo de 60 mm 
+//me calcula la fuerza de apriete en unidades de decanewton y lo envia por bluetooth hc05
+
+#include "HX711.h"   //libreria del hx711 amplificador
+
+#define DOUT  A1    
+#define CLK  A0
+
+HX711 balanza(DOUT, CLK);
+
+void setup() {
+  Serial.begin(9600);// tasa por defecto
+  BTserial.begin(9600); //tasa serial para bluetooth
+
+}
+//long fuerza=0;
+long val =0;   //inicializar una variable val en cero
+float count=0;
+float tiempo_muestreo=0;
+//long tiempo_muestreo=0;
+//long tiempo_muestreo1=0;
+int muestra=0;
+
+void loop() {
+//  if (Serial.available() >0)
+//    Serial.write(BTserial.read());  //codigo para enviar datos escrito x serial
+// if (Serial.available())
+//   BTserial.write(Serial.read());
+//  
+  long tiempo=millis();
+  
+  count=count+1; 
+ //val=((count-1)/count)*val + (1/count)*balanza.read(); // Cada cuenta otorga un valor mas estable de la lectura del ADC para calibracion
+//val=balanza.read();
+  //   Serial.println((val-96266) / 448.9619f);
+ //Serial.println((val- 94570)/445.467619f);
+ // zero 95889
+ while(millis()-tiempo < 1000 )//realizamos mediciones durante 1000 ms por cada bucle
+  { 
+    //tiempo_muestreo= tiempo_muestreo+0.0125f;   // si tenemos 80 [Hz]= 12,5 ms 
+    tiempo_muestreo= tiempo_muestreo+0.1f;   // si tenemos 10 [Hz] = 100 ms
+    muestra=muestra+1;                          // Numero de muestra tomada
+    //tiempo_muestreo=millis();
+     //val=balanza.read();
+     //Serial.println((val));
+     val=balanza.read();                        // Proceso de Lectura del ADC
+     BTserial.write(val);               //escritura de val al bluetotth
+    //BTserial.write('\r\n');
+     //fuerza = (val*1.f/44017)-4;
+     //tiempo_muestreo1=millis()-tiempo_muestreo;
+    // Serial.print("t=");
+   // Serial.print(muestra);
+    //Serial.print(",");
+     //Serial.print(tiempo_muestreo,4);Serial.print("\t");
+//     Serial.print(",");
+     //Serial.print(tiempo_muestreo1);
+     //Serial.print(" valor=");
+     //Serial.print(";");
+//     Serial.println((val-(-872800)) /(- 7002.74f));//cero en -.8728e6 73 kg en -1.384e6
+     //Serial.println((val*1.f/44017)-4);//38400)-3.75));//escribe el valor del adc   decanewton    168850
+     Serial.println(val);
+     
+     delay(100);
+//     Serial.println((val) / 1.f);
+     
+  }
+/*long time = 0;
+int interval = 10000; // Take a reading every 500 ms
+  if(millis() > time + interval) {
+    val=balanza.read();
+    Serial.print(" valor=");
+     Serial.println((val-96266) / 448.9619f);
+   time = millis();
+ }*/
+}
