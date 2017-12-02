@@ -65,7 +65,7 @@ void loop() {
      //Serial.println((val*1.f/44017)-4);//38400)-3.75));//escribe el valor del adc   decanewton    168850
      Serial.println(val);
      
-     delay(100);
+     //delay(100);//comento el delay
 //     Serial.println((val) / 1.f);
      
   }
