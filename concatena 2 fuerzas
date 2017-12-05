@@ -1,0 +1,52 @@
+clear all;
+%   close all;
+ clc;
+%  concatena_archivos(m); %concatena m archivos 
+% open the file
+% [filename, pathname] = uigetfile('*.*');
+pathname = uigetdir('seleccione directorio');
+% filename=[pathname filename]; % 'casa-u.TXT';
+% fid = fopen(filename);
+
+dire = dir([pathname '\' '*.mat']); %carga el directorio
+nArch=round(length(dire)/1);
+
+display('Concatena.m ... inicio carga archivos  ');
+tic
+j=0;
+dati=[];
+ti=[];
+
+for i=1:nArch,    
+   if length(dire(i).name) >16,
+    datos = load([pathname '\'  dire(i).name]);
+    if size([datos.a1 datos.a2])~=[0,0]
+        nchan=size([datos.a1 datos.a2],2);
+        if i==1,
+            dati=[datos.a1 datos.a2];
+        elseif (i>1 && (size(dati,2) == size([datos.a1 datos.a2],2))),
+            dati=[dati;[datos.a1 datos.a2]];
+        end
+    end
+    j=j+1;
+    if (i ~= j)
+     display([i j]);
+    end
+   end
+end
+display('fin carga datos');toc;
+%  Fs=10.;
+%  Fs=length(dati)/dati(end,1);
+ Fs= 1/mean(diff(datos.t));
+
+t=(0:1:length(dati)-1)/Fs;
+y=find(pathname =='\');
+% dat=dati(:,4);
+% ind=find(diff( dat)>0.020);
+% dat(ind+1)=dat(ind);
+% dat1=dat;
+%  ind1=find(diff( dat1 ) < -0.020);
+% dat1(ind1+1)=dat1(ind1);
+%  ind1=find(diff( dat1 ) < -0.020);
+% dat1(ind1+1)=dat1(ind1);
+figure;plot(t',dati);;grid;title(['Fuerza en kp vs tiempo en s. Fsample  ', num2str(Fs)]); 
