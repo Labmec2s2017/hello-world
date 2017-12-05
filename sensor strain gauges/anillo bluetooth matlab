@@ -1,0 +1,59 @@
+%borrar previos
+clear;
+clc;
+%crear objeto Bluetooth
+B = Bluetooth('btspp://0021130142B2', 1); %crear objeto bluetooth en matlab
+warning('off','MATLAB:serial:fscanf:unsuccessfulRead');
+%abrir puerto
+fopen(B);%se abre el puerto serial
+B   %arrojar por command window estado de conexion bluetooth
+% parámetros de medidas
+tmax = 4.0; % tiempo de captura en s
+f = 80; % resultado experimental (comprobar)
+
+% inicializar
+% j=0;
+% ejecutar bucle cronometrado
+%tic
+    a1 = fscanf(B) %borra encabezados
+    a2 = fscanf(B) %borra encabezados
+    a3 = fscanf(B) %borra encabezados
+    a4 = fscanf(B) %borra encabezados
+%------------------------------------------------
+    Dire=datestr(now);          %crea un archivo
+    ind=find(Dire==char(32));
+    Dire(ind)='-';
+    ind=find(Dire==char(58));
+    Dire(ind)='-';
+    mkdir(Dire);
+%------------------------------------------------
+
+    tstart = tic;
+while 1<2
+    a=[];
+
+i=1;
+while i<tmax*f+1
+     b1 = fscanf(B);    %escanea lo que envia el Bluetooth
+     b = str2num(b1);   %transforma desde string a numero 
+    a=[a;b];
+    t(i)=toc(tstart);   %contador de tiempo
+    i = i+1;            %aumenta el valor de i en uno
+end
+% resultado del cronometro
+% j=j+1;
+figure(1);plot(t',a);grid on;drawnow;%se plotean los datos
+    file=datestr(now);
+    ind=find(file==char(32));
+    file(ind)='-';
+    ind=find(file==char(58));
+    file(ind)='-';
+    save([Dire '\' file],'t','a');%guarda un archivo 
+%     save(file,'Data','Fs','TSimple');
+% file=date;
+%clear(a);
+end
+%% Limpiar puerto serie
+% fclose(B);
+% delete(B);
+% clear B;
