@@ -1,0 +1,128 @@
+%Limpiar variables, command windows y interface objects
+clear
+clc
+instrreset
+close all
+
+
+%Variables generales
+nombre_bluetooth = 'HC-05-1';
+calibracion2 = -1515050/25.762;%-44017 %Valor obtenido con IGSTRON
+calibracion1 = -1621600/25.762;
+gyroScale = (250.0/32768.0)*(9.54/57.29);
+dataMax = 10; % Cantidad de datos a capturar
+tmax = 4.0; % tiempo de captura en s
+f = 80; % resultado experimental (comprobar)
+
+disp(strcat('VALORES DE CALIBRACION, CANAL 1: ', num2str(calibracion1), ', CANAL 2: ', num2str(calibracion2)));
+
+%directorio_raiz = 'C:\Users\f\Desktop\';
+directorio_raiz = 'C:\Users\f\Desktop\codigos_medicion_gplaza\mediciones\';
+disp(strcat('DIRECTORIO: ', directorio_raiz));
+
+%Creat a bluetooth object
+%HC-05 channel default is 1
+bluetooth = Bluetooth(nombre_bluetooth,1);
+warning('off','MATLAB:serial:fscanf:unsuccessfulRead');
+
+fopen(bluetooth);
+bluetooth
+
+% Crea directorio
+Dire = datestr(now);          %crea un archivo
+ind = find(Dire == char(32));
+Dire(ind) = '-';
+ind = find(Dire == char(58));
+Dire(ind) = '-';
+mkdir([directorio_raiz, Dire]);
+
+%Tara 
+% Descartando las primeras n mediciones
+n = 10;
+i = 0;
+%format long g
+disp(strcat('Descartando los ', num2str(n), ' primeros valores'));
+while i < n
+    basura = fscanf(bluetooth,'%f');
+    i = i + 1;
+end
+
+% Se promedian las m mediciones y se guarda en offset
+offset_1 = 0;
+offset_2 = 0;
+offset_gyro = 0;
+count = 0;
+m = 100; % Cantidad de mediciones a promediar
+disp(strcat('Calculando los offset con', num2str(m), ' datos'));
+while count < m
+    bluetooth_data = fscanf(bluetooth,'%f');            %Se lee el valor del bluetooth
+    offset_1 = offset_1 + bluetooth_data(1);
+    offset_2 = offset_2 + bluetooth_data(2);
+    offset_gyro = offset_gyro + bluetooth_data(4);
+    count = count + 1;
+end
+%Promedio de los offset
+offset_1 = offset_1/m
+offset_2 = offset_2/m
+offset_gyro = offset_gyro/m
+
+% Tiempo inicial
+temp = fscanf(bluetooth,'%f');
+tiempo_inicial = temp(3);
+
+data_counter = 0;
+while data_counter < dataMax;    
+    hx711_1 = [];
+    hx711_2 = [];
+    time = [];
+    gyroscope = [];
+    i = 1;
+    while i < tmax*f + 1
+        bluetooth_data = fscanf(bluetooth,'%f');         %escanea lo que envia el Bluetooth
+        data_1 = (bluetooth_data(1) - offset_1)/calibracion1;        %transforma desde string a numero 
+        data_2 = (bluetooth_data(2) - offset_2)/calibracion2;
+        time = [time; bluetooth_data(3)];
+        gyro_data = (bluetooth_data(4) - offset_gyro)*gyroScale;
+        
+        hx711_1 = [hx711_1; data_1];
+        hx711_2 = [hx711_2; data_2];
+        gyroscope = [gyroscope; gyro_data];
+        
+        i = i + 1;              %aumenta el valor de i en uno
+    end
+    
+    time = time - tiempo_inicial;
+    
+    %Plot data
+    figure(1);
+    hold on
+    grid on;
+    plot(time, hx711_2, 'b');
+%    hold off
+%      
+%     figure(2);
+%     hold on
+%     grid on;
+    plot(time, hx711_1, 'r');
+    ylim([-10 10]);
+    hold off
+    
+    figure(2);
+    hold on
+    grid on;
+    plot(time, gyroscope, 'y');
+    hold off
+    
+    drawnow;
+    file = datestr(now);
+    ind = find(file == char(32));
+    file(ind)='-';
+    ind = find(file == char(58));
+    file(ind)='-';
+    save([directorio_raiz, Dire '\' file],'time','hx711_1','hx711_2','gyroscope'); %guarda un archivo 
+    
+    data_counter = data_counter + 1 
+end
+
+%Close
+fclose(bluetooth);
