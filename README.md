@@ -10,3 +10,6 @@ se ocupa bluetooth  HC-05.
 se ocupa porta pilas 4 de 1.5 volt para alimentar al arduino UNO.
 
 tambien se busca medir aceleracion con el sensor MPU6050
+
+Alumnos participantes :  Joaquin Schulz -  Guillermo Plaza -  Nelson Castillo.
+Profesor Guia : Fernando Rojas .
