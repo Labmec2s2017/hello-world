@@ -6,17 +6,17 @@
 
 //#include <UbidotsMicroESP8266.h>
 //#define TOKEN "XXXXXXXXXXXXXXXXXXXXXX" // Put here your Ubidots TOKEN
-char * ssid = "cashew"; // Put your WiFi SSID here
-char * pass = "oW329bTdVmYJ"; // Put your Wifi Password here
+//char * ssid = "cashew"; // Put your WiFi SSID here
+//char * pass = "oW329bTdVmYJ"; // Put your Wifi Password here
 //Ubidots client(TOKEN);
 
-const int MPU_addr = 0x68; // I2C address of the MPU-6050
+const int MPU_addr = 0x68; // nombre del mpu 6050---I2C address of the MPU-6050
 
-WiFiUDP udp;
-boolean wifiConnected = false;
+//WiFiUDP udp;
+//boolean wifiConnected = false;
 //int16_t AcX, AcY, AcZ, Tmp, GyX, GyY, GyZ;
-IPAddress ip (10,1,1,110); // the remote IP address
-const unsigned int port = 12345;      // port to send UDP packets
+//IPAddress ip (10,1,1,110); // the remote IP address
+//const unsigned int port = 12345;      // port to send UDP packets
 int status = WL_IDLE_STATUS;
 uint32_t counter;
 
@@ -43,27 +43,27 @@ void setup() {
 
   Serial.begin(115200);
 
-  Serial.print("Packet size: ");
-  Serial.println(sizeof(MPUtelemetry));
+  //Serial.print("Packet size: ");
+  //Serial.println(sizeof(MPUtelemetry));
 
 // Connect to WiFi network
-  Serial.println();
-  Serial.println();
-  Serial.print("Connecting to ");
-  Serial.println(ssid);
+  //Serial.println();
+  //Serial.println();
+  //Serial.print("Connecting to ");
+  //Serial.println(ssid);
   
-  WiFi.begin(ssid, pass);
+  //WiFi.begin(ssid, pass);
   
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-  Serial.println("");
-  Serial.println("WiFi connected");
+  //while (WiFi.status() != WL_CONNECTED) {
+    //delay(500);
+    //Serial.print(".");
+  //}
+  //Serial.println("");
+  //Serial.println("WiFi connected");
 
-  Serial.println("\nStarting connection to server...");
+  //Serial.println("\nStarting connection to server...");
   // if you get a connection, report back via serial:
-  udp.begin(port);
+  //udp.begin(port);
   counter = 0;
 }
 
@@ -80,17 +80,26 @@ void loop() {
   tm.GyY = Wire.read() << 8 | Wire.read(); // 0x45 (GYRO_YOUT_H) & 0x46 (GYRO_YOUT_L)
   tm.GyZ = Wire.read() << 8 | Wire.read(); // 0x47 (GYRO_ZOUT_H) & 0x48 (GYRO_ZOUT_L)
 
-  Serial.print("# = "); Serial.print(counter);
-  Serial.print("| ms = "); Serial.print(millis());
+  //Serial.print("# = "); 
+  //Serial.print(counter);
+  //Serial.print("| ms = ");
+  Serial.print(millis());
   //Serial.print(" | Packet size: ");
   //Serial.print(sizeof(MPUtelemetry));
-  Serial.print(" | AcX = "); Serial.print(tm.AcX);
-  Serial.print(" | AcY = "); Serial.print(tm.AcY);
-  Serial.print(" | AcZ = "); Serial.print(tm.AcZ);
-  Serial.print(" | Tmp = "); Serial.print(tm.Tmp / 340.00 + 36.53); //equation for temperature in degrees C from datasheet
-  Serial.print(" | GyX = "); Serial.print(tm.GyX);
-  Serial.print(" | GyY = "); Serial.print(tm.GyY);
-  Serial.print(" | GyZ = "); Serial.println(tm.GyZ);
+  //Serial.print(" | AcX = "); 
+  Serial.print(tm.AcX);
+  //Serial.print(" | AcY = "); 
+  Serial.print(tm.AcY);
+  //Serial.print(" | AcZ = "); 
+  Serial.print(tm.AcZ);
+  //Serial.print(" | Tmp = "); 
+  Serial.print(tm.Tmp / 340.00 + 36.53); //equation for temperature in degrees C from datasheet
+  //Serial.print(" | GyX = "); 
+  Serial.print(tm.GyX);
+  //Serial.print(" | GyY = ");
+  Serial.print(tm.GyY);
+  //Serial.print(" | GyZ = ");
+  Serial.println(tm.GyZ);
   tm.counter = counter;
   counter++;
 
@@ -104,9 +113,12 @@ void loop() {
   y= RAD_TO_DEG * (atan2(-xAng, -zAng)+PI);
   z= RAD_TO_DEG * (atan2(-yAng, -xAng)+PI);
   
-  Serial.print("Angles X= "); Serial.print(x);
-  Serial.print(" Y= "); Serial.print(y);
-  Serial.print(" Z= "); Serial.println(z); 
+  //Serial.print("Angles X= ");
+  //Serial.print(x);
+  //Serial.print(" Y= ");
+  //Serial.print(y);
+  //Serial.print(" Z= "); 
+  //Serial.println(z); 
 
   //Serial.println(AcX);
 
@@ -114,9 +126,9 @@ void loop() {
   //client.sendAll(true);
   tm.ms = millis();
   //char *message = "Hello from wemos D1 mini!";
-  udp.beginPacket(ip,port);
-  udp.write((char *)&tm, sizeof(tm));
-  udp.endPacket();
+  //udp.beginPacket(ip,port);
+  //udp.write((char *)&tm, sizeof(tm));
+  //udp.endPacket();
 
   delay(40);
 }
@@ -124,17 +136,17 @@ void loop() {
 
 void printWifiStatus() {
   // print the SSID of the network you're attached to:
-  Serial.print("SSID: ");
-  Serial.println(WiFi.SSID());
+  //Serial.print("SSID: ");
+  //Serial.println(WiFi.SSID());
 
   // print your WiFi shield's IP address:
-  IPAddress ip = WiFi.localIP();
-  Serial.print("IP Address: ");
-  Serial.println(ip);
+  //IPAddress ip = WiFi.localIP();
+  //Serial.print("IP Address: ");
+  //Serial.println(ip);
 
   // print the received signal strength:
-  long rssi = WiFi.RSSI();
-  Serial.print("signal strength (RSSI):");
-  Serial.print(rssi);
-  Serial.println(" dBm");
+  //long rssi = WiFi.RSSI();
+  //Serial.print("signal strength (RSSI):");
+  //Serial.print(rssi);
+  //Serial.println(" dBm");
 }
