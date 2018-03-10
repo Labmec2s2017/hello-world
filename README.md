@@ -1,5 +1,5 @@
 # hello-world
-Este repositorio esta realizado para mi primer hello world en github
+   Este repositorio esta realizado para mi primer hello world en github
 La idea es crear este control de versiones de un proyecto universitario.
 
 El proyecto es realizado en la ciudad de valparaiso ,chile.
@@ -9,7 +9,13 @@ se ocupa Arduino UNO.
 se ocupa bluetooth  HC-05.
 se ocupa porta pilas 4 de 1.5 volt para alimentar al arduino UNO.
 
-tambien se busca medir aceleracion con el sensor MPU6050
+OBJETIVOS:
+
+  1. medir fuerza de efecto giroscopico experimentalmente ocupando arduino con octave inalambricamente.
+  2. medir fuerza de coriolis experimentalmente ocupando arduino con octave inalambricamente.
+  3. medir velocidad angular con IMU MPU6050 .
+  4. Utilizar strain gages para medir deformacion experimentalmente.
+  5. Se busca medir aceleracion con el sensor MPU6050.
 
 Alumnos participantes :  Joaquin Schulz (ing mec)-  Guillermo Plaza (ing electroni)-  Nelson Castillo(ing mec).
 Profesor Guia : Fernando Rojas .
