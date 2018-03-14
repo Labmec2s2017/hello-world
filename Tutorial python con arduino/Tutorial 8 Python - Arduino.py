@@ -28,9 +28,9 @@ def plotea (i):
         datoString = ser.readline()  #Leemos una línea enviada (hasta que se recibe el carácter \n).
         
         datos = str(datoString).split(",")
-        temperatura.append (datos[0] )#[2:])
-        luz.append (datos[1])#[:-5])
-        #print (temperatura[i] + " "+ luz[i])
+        temperatura.append (datos[0] )[2:])
+        luz.append (datos[1])[:-5])
+        print (temperatura[i] + " "+ luz[i])
        
      ax1.clear() #Limpiamos la gráfica para volver a pintar.
      ax1.set_ylim([0,50000]) #Ajustamos el límite vertical de la gráfica.
