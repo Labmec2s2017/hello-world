@@ -1,0 +1,50 @@
+#include <SoftwareSerial.h> 
+// este codigo es necesario cargarlo al arduino uno para configurar el bluetooth hm-10
+// ARduino uno    /   HM-10
+// ------------conexion----------------
+// 3,3 V --------->Vcc
+// Gnd------------>Gnd
+// Pin Digital 11 ---> RX
+// Pin Digital 10 ---> Tx
+// informacion extra : no es necesario conectar el pin EN del bluetooth
+// no es necesario apretar el boton del bluetooth
+// 
+//Al abrir el monitor serial debe estar en ambos Nl & CR
+// 9600 BAUDIOS
+// enviar AT por serial , debe responder OK
+// // Exibir Versão
+//     AT+VERSION
+ 
+// Exibir a lista de comandos
+//     AT+HELP
+ 
+// Exibir Nome
+//     AT+NAME
+ 
+// Altera Nome
+//     AT+NAMEnombrequerido
+ 
+// Definir PIN
+//     AT+PASS123456
+ 
+// Alterar papel (0 - Slave e 1 Master)
+//     AT+ROLE0
+//     AT+ROLE0
+ 
+// Pino TXD -> Digital 10
+// Pino RXD -> Digital 11
+SoftwareSerial mySerial(10, 11);
+ 
+void setup(){
+  Serial.begin(9600);
+  Serial.println("Bem Vindo!");
+  mySerial.begin(9600);
+}
+ 
+// Laço de Repetição infinita
+void loop() {
+  if (mySerial.available())
+  Serial.write(mySerial.read());
+  if (Serial.available())
+  mySerial.write(Serial.read());
+}
