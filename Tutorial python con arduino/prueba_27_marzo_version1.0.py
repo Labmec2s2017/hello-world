@@ -23,12 +23,12 @@ while True:
     while(arduinodata.inWaiting()==0):  #espera datos a recibir
         pass
     arduinoString = arduinodata.readline()
-    dataArray = arduinoString.split(',')
-    tiemp = float(dataArray[0])
-    vz = float(dataArray[1])
-    tiempo.append(tiemp)
-    veloz.append(vz)
-    drawnow(makeFig)
+    dataArray = arduinoString.split(',')  #corto justo en la coma
+    tiemp = float(dataArray[0])           #creo una variable tipo numero float
+    vz = float(dataArray[1])              #creo una variable tipo numero float
+    tiempo.append(tiemp)                  #añado los datos en una cadena
+    veloz.append(vz)                      #añado los datos en una cadena
+    drawnow(makeFig)                      #llamo la funcion q plotea
     plt.pause(.000001)
     cnt=cnt+1
     if (cnt>100):
