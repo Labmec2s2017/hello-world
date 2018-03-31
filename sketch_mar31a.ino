@@ -1,3 +1,5 @@
+//mide temperatura en grados celcius
+
 void setup() {
  Serial.begin(9600);
  Serial.println("");
