@@ -1,0 +1,108 @@
+//conexcion de dos mpu6050 trabajando en paralelo por comunicacion I2C.
+//conexion MPU1
+//Vcc --->5v(arduino uno)
+//gnd --->gnd(arduino uno)
+//scl --->A5 (arduino uno es comun al segundo MPU)
+//sda --->A4(arduino uno es comun al segundo MPU)
+//AD0 ---> no se usa
+//INT ---> no se usa
+
+//conexion MPU2
+//Vcc ---> no se usa
+//gnd --> gnd (arduino uno)
+//scl ---> A5(arduino uno es comun al primer MPU)
+//sda ---> A4 (arduino uno es comun al primer MPU)
+//AD0 --->5v (arduino uno)
+//INT --->no se usa
+
+
+#include <Wire.h>
+const int MPU2 = 0x69, MPU1=0x68;
+
+long accelX, accelY, accelZ;
+float gForceX, gForceY, gForceZ, gyroX, gyroY, gyroZ,rotX, rotY, rotZ;
+long accelX2, accelY2, accelZ2;
+float gForceX2, gForceY2, gForceZ2;
+
+void setup(){
+  Wire.begin();
+  Wire.beginTransmission(MPU1);
+  Wire.write(0x6B);
+  Wire.write(0b00000000);
+  Wire.endTransmission();  
+  Wire.beginTransmission(MPU1);
+  Wire.write(0x1B);
+  Wire.write(0x00000000);
+  Wire.endTransmission(); 
+  Wire.beginTransmission(MPU1);
+  Wire.write(0x1C);
+  Wire.write(0b00000000);
+  Wire.endTransmission(); 
+  
+  Wire.begin();
+  Wire.beginTransmission(MPU2);
+  Wire.write(0x6B);
+  Wire.write(0b00000000); 
+  Wire.endTransmission();  
+  Wire.beginTransmission(MPU2); 
+  Wire.write(0x1B);
+  Wire.write(0x00000000);
+  Wire.endTransmission(); 
+  Wire.beginTransmission(MPU2);
+  Wire.write(0x1C);
+  Wire.write(0b00000000);
+  Wire.endTransmission(); 
+  Serial.begin(38400);
+  
+}
+
+void loop(){
+  GetMpuValue(MPU1);
+  Serial.print("\t ||| \t");
+
+  GetMpuValue(MPU2);
+  Serial.println("");
+}
+
+void GetMpuValue(const int MPU){
+  Wire.beginTransmission(MPU); 
+  Wire.write(0x3B);
+  Wire.endTransmission();
+  Wire.requestFrom(MPU,6);
+  while(Wire.available() < 6);
+  accelX = Wire.read()<<8|Wire.read(); 
+  accelY = Wire.read()<<8|Wire.read(); 
+  accelZ = Wire.read()<<8|Wire.read();
+  
+  Wire.beginTransmission(MPU);
+  Wire.write(0x43);
+  Wire.endTransmission();
+  Wire.requestFrom(MPU,6);
+  while(Wire.available() < 6);
+  gyroX = Wire.read()<<8|Wire.read();
+  gyroY = Wire.read()<<8|Wire.read();
+  gyroZ = Wire.read()<<8|Wire.read(); 
+
+
+  gForceX = accelX / 16384.0;
+  gForceY = accelY / 16384.0; 
+  gForceZ = accelZ / 16384.0;
+  rotX = gyroX / 131.0;
+  rotY = gyroY / 131.0; 
+  rotZ = gyroZ / 131.0;
+  Serial.print("gyro\t");
+  Serial.print(rotX);
+  Serial.print("\t");
+  Serial.print(rotY);
+  Serial.print("\t");
+  Serial.print(rotZ);
+  Serial.print("\tAcc\t");
+  Serial.print(gForceX);
+  Serial.print("\t");
+  Serial.print(gForceY);
+  Serial.print("\t");
+  Serial.print(gForceZ);
+  delay(100);
+  
+}
+
