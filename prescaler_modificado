@@ -1,5 +1,6 @@
 // Prescaler accuracy test
 //prueba cambiando el prescaleer
+//fuente es el foro sigueinte http://gammon.com.au/adc
 void setup ()
   {
   Serial.begin (115200);
