@@ -1,0 +1,51 @@
+#include <Adafruit_Sensor.h>
+
+#include <Adafruit_BMP280.h>
+
+
+
+#include <SPI.h> 
+//#include "cactus_io_BME280_SPI.h" 
+//------ARD UNO------------BMP280----------
+#define BMP_SCK 13// Serial Clock     SCL
+#define BMP_MISO 12// Serial Data Out SD0
+#define BMP_MOSI 11// Serial Data In  SDA
+#define BMP_CS 10 // Chip Select      CSB
+// GND //                         GND
+//3.3VOLT   //                    VCC
+float t0;
+// Create BME280 object 
+//BME280_SPI bme(BME_CS); // Using Hardware SPI 
+//BMP280_SPI bme(BMP_CS,BMP_MOSI,BMP_MISO,BMP_SCK); // Using Software SPI 
+Adafruit_BMP280 bme(BMP_CS,BMP_MOSI,BMP_MISO,BMP_SCK); // Using Software SPI 
+void setup() { 
+t0=millis();
+Serial.begin(2000000); 
+//Serial.println("Bosch BME280 Pressure - Humidity - Temp Sensor | cactus.io"); 
+
+if (!bme.begin()) { 
+Serial.println("Could not find a valid BME280 sensor, check wiring!"); 
+while (1); 
+} 
+
+//bme.setTempCal(-1);// Sensor was reading high so offset by 1 degree C 
+
+//Serial.println("Pressure\tHumdity\t\tTemp\ttTemp"); 
+} 
+
+void loop() { 
+
+//bme.readSensor(); 
+//  Serial.print(millis()-t0);
+//  Serial.print(" , ");
+  Serial.println(bme.readPressure()-101325);
+  //Serial.println(bme.readTemperature());
+  //Serial.println(bme.readAltitude(1013.25));
+//Serial.print(bme.getPressure_MB()); Serial.print(" mb\t"); // Pressure in millibars 
+//Serial.print(bme.getHumidity()); Serial.print(" %\t\t"); 
+//Serial.print(bme.getTemperature_C()); Serial.print(" *C\t"); 
+//Serial.print(bme.getTemperature_F()); Serial.println(" *F"); 
+
+// Add a 2 second delay. 
+//delay(); //just here to slow down the output. 
+}
