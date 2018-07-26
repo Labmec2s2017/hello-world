@@ -1,0 +1,110 @@
+#include <ESP8266WiFi.h>
+#include <Wire.h>
+#include <SPI.h>
+#include <Adafruit_Sensor.h>
+#include <Adafruit_BMP280.h>
+
+// assign the ESP8266 pins to arduino pins
+#define D1 5
+#define D2 4
+#define D4 0
+#define D3 2
+
+// assign the SPI bus to pins
+#define BMP_SCK D1
+#define BMP_MISO D3
+#define BMP_MOSI D2
+#define BMP_CS D4
+
+#define SEALEVELPRESSURE_HPA (1013.25)
+///////////////////////////////////////////////////////////////////////////////////////////////////
+String apiKey = "xxxxxxxxxxx";//copiar apikey desde la pagina web thingspeak.com
+const char* ssid = "xxxxxxxx"; //nombre ssid wifi 
+const char* password = "xxxxxxxx"; // wifi password 
+const char* server = "api.thingspeak.com";
+////////////////////////////////////////////////////////////////////////////////////////////////////
+Adafruit_BMP280 bme(BMP_CS, BMP_MOSI, BMP_MISO, BMP_SCK); // software SPI
+
+unsigned long delayTime;
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+WiFiClient client;
+void setup() {
+    Serial.begin(115200);
+    Serial.println(F("BME280 test"));
+/////////////////////////////////////////////////////////////////////////////////////////////////
+WiFi.begin(ssid, password);
+ 
+Serial.println();
+Serial.println();
+Serial.print("Connecting to ");
+Serial.println(ssid);
+ 
+WiFi.begin(ssid, password);
+ 
+while (WiFi.status() != WL_CONNECTED)
+{
+delay(500);
+Serial.print(".");
+}
+Serial.println("");
+Serial.println("WiFi connected");
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+    bool status;
+    
+    // default settings
+    status = bme.begin();
+    if (!status) {
+        Serial.println("Could not find a valid BME280 sensor, check wiring!");
+        while (1);
+    }
+
+
+   delayTime = 1000;
+
+}
+
+
+void loop() { 
+    
+    Serial.print("Temperature = ");
+    Serial.print(bme.readTemperature());
+    Serial.println(" *C");
+
+    Serial.print("Pressure = ");
+
+    Serial.print(bme.readPressure()-101325); /// 100.0F);
+    Serial.println(" mba");//(" hPa");
+    ///////////////////////////////////////////////////////////////////////////////////////////
+    if (client.connect(server,80)) {
+String postStr = apiKey;
+postStr +="&field1=";
+postStr += String(bme.readTemperature());
+postStr +="&field2=";
+postStr += String(bme.readPressure()-101325);
+postStr += "\r\n\r\n";
+ 
+client.print("POST /update HTTP/1.1\n");
+client.print("Host: api.thingspeak.com\n");
+client.print("Connection: close\n");
+client.print("X-THINGSPEAKAPIKEY: "+apiKey+"\n");
+client.print("Content-Type: application/x-www-form-urlencoded\n");
+client.print("Content-Length: ");
+client.print(postStr.length());
+client.print("\n\n");
+client.print(postStr);
+    }
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+     client.stop();
+    delay(delayTime);
+
+}
+
+
+
+
+
+  
+ 
+
+
