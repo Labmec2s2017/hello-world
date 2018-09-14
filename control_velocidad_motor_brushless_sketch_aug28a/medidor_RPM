@@ -1,0 +1,69 @@
+//codigo que puede medir 2rpm hasta 60000 rpm
+//se probo usando generador de funciones tektronix señal cuadrada amplitud 2,5 
+//#include <LiquidCrystal.h>
+
+//LiquidCrystal lcd(8,9,4,5,6,7);
+
+volatile byte rev;
+volatile long dTime, timeold;
+unsigned int rpm, freq;
+//unsigned long timeLCD;
+
+
+void setup(){
+  //lcd.begin(16,2);
+  //lcd.setCursor(6,0);
+  //lcd.print("rpm");
+  //lcd.setCursor(6,1);
+  //lcd.print("1/s");
+  Serial.begin(115200);
+  attachInterrupt(0, revInterrupt, RISING);        //pin 21 is our interrupt
+  dTime=0, rev=0, rpm=0, freq=0;
+  timeold=0;
+  //timeLCD=0;
+}
+
+void loop(){
+  if (rev > 2)  //antes tenia 20
+   {
+    cli();                           //disable interrupts while we're calculating
+    if (dTime > 0)                   //check for timer overflow
+    {
+      rev-=1;                        //subtract one since the first revolution is not measured
+      rpm=(60000000*rev)/(dTime);
+      freq=rpm/60;
+      //Serial.print(rev);
+      //Serial.print(" ");
+      Serial.println(rpm);            //a bit of serial for the debugging (not really needed at this point, perhaps one day for some graphs)
+      //Serial.print(" ");
+      //Serial.println(dTime);
+      rev=0;
+    }
+    sei();                          //re-enable interrupts
+   }
+//  if ((millis()-timeLCD) >= 250)
+//   {
+////     lcd.setCursor(0,0);
+////     lcd.print("     ");
+////     lcd.setCursor(0,0);
+////     lcd.print(rpm);
+////     lcd.setCursor(0,1);            //output for the LCD
+////     lcd.print("     ");
+////     lcd.setCursor(0,1);
+////     lcd.print(freq);
+////     timeLCD=millis();
+//   }
+}
+
+void revInterrupt (){
+  if (rev == 0) 
+  {
+    timeold=micros();              //first measurement is unreliable since the interrupts were disabled
+    rev++;
+  }
+  else 
+  {
+    dTime=(micros()-timeold);      //'micros()' is not incrementing while inside the interrupt so it should be safe like this right?
+    rev++;
+  }
+}
