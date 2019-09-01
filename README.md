@@ -11,11 +11,12 @@ se ocupa porta pilas 4 de 1.5 volt para alimentar al arduino UNO.
 
 OBJETIVOS:
 
-  1. medir fuerza de efecto giroscopico experimentalmente ocupando arduino con octave inalambricamente.
-  2. medir fuerza de coriolis experimentalmente ocupando arduino con octave inalambricamente.
-  3. medir velocidad angular con IMU MPU6050 .
+  1. Medir fuerza del efecto giroscópico experimentalmente ocupando arduino con octave inalámbricamente.
+  2. Medir fuerza de coriolis experimentalmente ocupando arduino con octave inalámbricamente.
+  3. Medir velocidad angular con IMU MPU6050 .
   4. Utilizar strain gages para medir deformacion experimentalmente.
   5. Se busca medir aceleracion con el sensor MPU6050.
+  6. Comparar el modelo teorico con el modelo experimental.
 
 Alumnos participantes :  Joaquin Schulz (ing mec)-  Guillermo Plaza (ing electroni)-  Nelson Castillo(ing mec).
 Profesor Guia : Fernando Rojas .
